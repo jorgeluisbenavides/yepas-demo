@@ -4,7 +4,7 @@ FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copia nuestra página demo
-COPY index.html /usr/share/nginx/html/index.html
+COPY . /usr/share/nginx/html/
 
 # Nginx escucha en el puerto 80 dentro del contenedor
 EXPOSE 80

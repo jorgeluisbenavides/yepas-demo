@@ -1,9 +1,9 @@
 # Yepas DEMO
-BUILD IMAGE
-docker build -t demo-nginx .
+# BUILD IMAGE
+docker build -t demo-yepas .
 
-Run Container
+# Run Container
 docker run -d \
-  --name demo-nginx \
+  --name demo-yepas \
   -p 8085:80 \
-  demo-nginx
+  demo-yepas
