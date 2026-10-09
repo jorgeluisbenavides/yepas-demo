@@ -1,897 +1,535 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="web_standard" name="shell-type">
-  <title>Yepas Recompensas</title>
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Outfit:wght@600;700&amp;display=swap"
-    rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-    rel="stylesheet">
-  <style>
-    @layer base {
-
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        overscroll-behavior: none;
-      }
-
-      main>:first-child {
-        margin-top: 0 !important;
-      }
-
-      main>:last-child {
-        margin-bottom: 0 !important;
-      }
-    }
-
-    ::-webkit-scrollbar {
-      display: none;
-    }
-
-    #inicio,
-    #puntos,
-    #promociones,
-    #movimientos,
-    #micuenta {
-      scroll-margin-top: 6rem;
-    }
-  </style>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script
-    id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"on-primary-fixed": "#001848", "surface-bright": "#faf8ff", "secondary-container": "#fed000", "surface-container-high": "#e2e7ff", "yepas-navy": "#182B56", "surface-container-highest": "#dae2ff", "outline": "#737784", "background": "#faf8ff", "secondary": "#725c00", "outline-variant": "#c3c6d5", "on-error": "#ffffff", "on-error-container": "#93000a", "surface-container-low": "#f2f3ff", "inverse-on-surface": "#eef0ff", "surface": "#faf8ff", "tertiary-fixed": "#ffdad4", "on-tertiary-fixed-variant": "#920600", "promo-coral": "#E03A26", "success-emerald": "#00A86B", "reward-gold": "#FFD100", "surface-soft": "#F6F8FC", "surface-dim": "#ced9ff", "surface-variant": "#dae2ff", "on-primary-container": "#9fb8ff", "primary-container": "#0043a8", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#ffb4a7", "secondary-fixed-dim": "#edc200", "primary-fixed": "#dae2ff", "on-secondary-fixed": "#231b00", "error-container": "#ffdad6", "primary-fixed-dim": "#b2c5ff", "secondary-fixed": "#ffe07f", "on-primary-fixed-variant": "#0040a1", "on-tertiary-container": "#ffa191", "surface-container": "#eaedff", "on-secondary-fixed-variant": "#564500", "on-surface-variant": "#434653", "inverse-primary": "#b2c5ff", "on-tertiary-fixed": "#400100", "on-background": "#031944", "on-tertiary": "#ffffff", "tertiary": "#6d0400", "on-secondary-container": "#6f5900", "error": "#ba1a1a", "on-primary": "#ffffff", "surface-tint": "#2859bd", "tertiary-container": "#980700", "on-secondary": "#ffffff", "on-surface": "#031944", "inverse-surface": "#1c2f5a", "primary": "#002e79"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"margin-md": "2rem", "margin-lg": "3rem", "gutter-lg": "2rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "margin": "1rem", "space-md": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter-md": "1.5rem", "gutter": "1rem"}, "fontFamily": {"label-lg": ["Hanken Grotesk"], "headline-sm": ["Outfit"], "headline-lg-mobile": ["Outfit"], "body-sm": ["Hanken Grotesk"], "display": ["Outfit"], "label-md": ["Hanken Grotesk"], "headline-lg": ["Outfit"], "body-md": ["Hanken Grotesk"], "label-sm": ["Hanken Grotesk"], "headline-md": ["Outfit"], "body-lg": ["Hanken Grotesk"], "display-mobile": ["Outfit"]}, "fontSize": {"label-lg": ["15px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}], "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}], "headline-lg-mobile": ["26px", {"lineHeight": "32px", "fontWeight": "600"}], "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "display": ["44px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}], "headline-lg": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}], "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}], "body-lg": ["18px", {"lineHeight": "26px", "fontWeight": "400"}], "display-mobile": ["34px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]}}}};</script>
-</head>
-
-<body class="bg-surface font-body-md text-on-surface">
-  <header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
-    <div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md">
-      <div class="flex items-center gap-space-lg min-w-0">
-        <a class="flex items-center gap-space-sm shrink-0" data-path="inicio" href="#inicio">
-          <img alt="Yepas" class="h-10 w-auto object-contain"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtT31BUafLF1LGbiAqI3pmA9RbL6eMi1ALDcld2ef40-YDBI0Au7BPTCbbgN1HIy7w_PRzV3OajQj5ZIWz4BMnyihjU3GlevNNBLVLWJCSM-_DVBYj0pIye0j93d-vw-9gdEj0Y8Hi4wgcMUmu6IvLSvgbIlbjU8I-qYjo_cqQ-J9ny_4eaE1JrWkZYwxi5Czn8Mk9R2jmD-O_dpjIjUWC2exEaTmRFlvmgOeCv2hYhf303a0el5mHHNZhCdfhaf5OklE">
-          <span class="font-headline-sm text-headline-sm text-primary tracking-tight hidden sm:inline">Recompensas</span>
-        </a>
-        <nav class="hidden lg:flex items-center gap-space-xs p-space-xs rounded-xl bg-surface-container-low"
-          data-active-classes="bg-primary text-on-primary rounded-lg">
-          <a aria-current="page"
-            class="px-space-md py-space-sm font-label-md transition-colors bg-primary text-on-primary rounded-lg"
-            data-path="inicio" href="#inicio">Inicio</a>
-          <a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
-            data-path="mis-puntos" href="#puntos">Mis puntos</a>
-          <a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
-            data-path="promociones" href="#promociones">Promociones</a>
-          <a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
-            data-path="movimientos" href="#movimientos">Movimientos</a>
-          <a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
-            data-path="mi-cuenta" href="#micuenta">Mi cuenta</a>
-        </nav>
-      </div>
-      <div class="flex items-center gap-space-md shrink-0">
-        <div class="hidden md:flex items-center gap-space-sm">
-          <span class="font-label-md text-label-md text-on-surface">Hola, Jorge</span>
-          <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
-          </div>
-        </div>
-        <a class="hidden lg:inline-flex items-center justify-center px-space-md py-space-xs font-label-md text-label-md text-primary bg-surface-container-lowest border-[1.5px] border-primary rounded-lg hover:bg-primary hover:text-on-primary transition-all"
-          data-path="login" href="registro.html">Cerrar sesión</a>
-        <button type="button" id="mobile-menu-toggle" aria-controls="mobile-menu" aria-expanded="false"
-          class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container transition-colors"
-          aria-label="Abrir menú">
-          <span class="material-symbols-outlined text-[26px]" id="mobile-menu-icon">menu</span>
-        </button>
-      </div>
-    </div>
-    <div id="mobile-menu" class="lg:hidden hidden border-t border-outline-variant/40 bg-surface/95 backdrop-blur-xl">
-      <div class="max-w-7xl mx-auto px-6 py-space-md flex flex-col gap-space-md">
-        <div class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
-          <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-on-primary text-[20px]">person</span>
-          </div>
-          <div class="flex flex-col min-w-0">
-            <span class="font-label-md text-label-md text-on-surface">Hola, Jorge</span>
-            <span class="font-body-sm text-body-sm text-on-surface-variant">Socio #YP-9482</span>
-          </div>
-        </div>
-        <nav class="flex flex-col gap-1" aria-label="Navegación móvil">
-          <a class="flex items-center gap-space-sm px-space-md py-3 rounded-lg bg-primary text-on-primary font-label-md"
-            data-path="inicio" href="#inicio">
-            <span class="material-symbols-outlined text-[22px]">home</span>
-            Inicio
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>Yepas Loyalty</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed-variant": "#5c4200", "primary-container": "#0b2559", "primary-fixed": "#dae2ff", "surface-container-low": "#eff4ff", "on-secondary-fixed": "#261900", "background": "#f8f9ff", "tertiary-fixed": "#85f8c4", "primary-fixed-dim": "#b2c5ff", "on-tertiary-fixed-variant": "#005137", "tertiary": "#00180d", "tertiary-container": "#002f1e", "on-primary": "#ffffff", "secondary-fixed": "#ffdea2", "on-surface": "#0b1c30", "on-primary-container": "#798ec8", "on-secondary": "#ffffff", "outline-variant": "#c5c6d1", "on-error-container": "#93000a", "on-primary-fixed": "#001848", "error": "#ba1a1a", "outline": "#757780", "on-tertiary-fixed": "#002114", "surface-container-highest": "#d3e4fe", "inverse-primary": "#b2c5ff", "tertiary-fixed-dim": "#68dba9", "surface-variant": "#d3e4fe", "surface-dim": "#cbdbf5", "on-background": "#0b1c30", "on-surface-variant": "#44464f", "secondary-fixed-dim": "#fbbc20", "surface": "#f8f9ff", "primary": "#001137", "surface-tint": "#485d93", "on-tertiary-container": "#23a274", "surface-container-high": "#dce9ff", "secondary": "#7a5900", "error-container": "#ffdad6", "on-primary-fixed-variant": "#2f457a", "on-error": "#ffffff", "surface-bright": "#f8f9ff", "secondary-container": "#febf23", "surface-container": "#e5eeff", "inverse-on-surface": "#eaf1ff", "on-tertiary": "#ffffff", "on-secondary-container": "#6d4f00", "inverse-surface": "#213145", "surface-container-lowest": "#ffffff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "1.75rem", "margin": "1.5rem", "space-md": "0.875rem", "gutter": "1rem", "space-lg": "1.25rem", "space-sm": "0.5rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-md": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-xl": ["Inter"], "label-lg": ["Inter"], "headline-lg": ["Inter"], "label-sm": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"] }, "fontSize": { "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-md text-on-background"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between"><div class="flex items-center gap-8"><a class="flex items-center gap-2" data-path="inicio" href="#"><span class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-headline-lg text-headline-lg">Y</span><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold leading-none">YEPAS</span><span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider leading-none mt-1">Loyalty Club</span></div></a><nav class="hidden md:flex items-center gap-1" data-active-classes="bg-surface-container-high text-on-surface font-label-md rounded-lg"><a aria-current="page" class="px-space-md py-space-sm transition-colors bg-surface-container-high text-on-surface font-label-md rounded-lg" data-path="inicio" href="#">Inicio</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="beneficios" href="#">Beneficios</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="como-funciona" href="#">Cómo funciona</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="recompensas" href="#">Recompensas</a><a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="sucursales" href="#">Sucursales</a></nav></div><div class="flex items-center gap-3"><a class="hidden sm:inline-flex items-center px-space-sm py-space-xs font-label-sm text-label-sm text-outline hover:text-primary transition-colors" data-path="staff-login" href="#">Acceso Staff</a><a class="inline-flex items-center justify-center bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed hover:text-on-secondary-fixed font-label-md text-label-md px-space-md py-space-sm rounded-lg transition-colors shadow-sm font-bold" data-path="registro" href="#">Registrarme gratis</a><img alt="Profile" class="w-8 h-8 rounded-full object-cover ml-1" src="https://lh3.googleusercontent.com/aida/AEtjO1X5oJ9fmTAPpJ72wASKcaXTa0ACgZgFRL6oLPMyw7ENK5HrVXwOqW3yOFEyJgmhJMubBpvYt_vEvO9hIMpXdxg39vrsAyxOBSuaTQBDInhu7MDl4ZVScNlACSLwrBABYnUwK-IeNvQAFPR6VASHz_Encl_u_9XsDoeETpYFTGYYG-9A8daReawdnlSc5lsKjbHzV6Kuh9-fjrcBv5clInwCexxvM1YNFz_4Ran_suKO9lZ8Cu06O1DYblYaQ59v-jY8N-iYjFZTi-Q"></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- 1. BANNER / ANUNCIO SUPERIOR CONTEXTUAL -->
+<aside aria-label="Aviso Promocional" class="w-full bg-secondary-container text-on-secondary-container px-4 py-2.5 shadow-sm transition-all">
+<div class="max-w-7xl mx-auto flex items-center justify-between gap-4 text-xs sm:text-sm font-label-md">
+<div class="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary-container text-on-primary text-[11px] font-bold shrink-0">★</span>
+<span class="font-bold tracking-tight text-primary">¡PROMOCIÓN DE BIENVENIDA!</span>
+<span class="hidden md:inline text-on-secondary-fixed">Regístrate hoy y recibe <strong>100 Puntos de regalo</strong> en tu primera compra en cualquiera de nuestras 96 tiendas.</span>
+<span class="inline md:hidden text-on-secondary-fixed">Recibe <strong>100 Pts gratis</strong> al unirte hoy.</span>
+</div>
+<a class="shrink-0 inline-flex items-center gap-1 bg-primary text-on-primary px-3 py-1 rounded text-xs font-semibold hover:bg-primary-container transition-transform active:scale-95" href="#registro">
+        Reclamar bono
+        <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</aside>
+<!-- 2. HERO SECTION -->
+<section class="relative overflow-hidden bg-surface py-12 lg:py-20">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<!-- Text & CTA Column -->
+<div class="lg:col-span-7 flex flex-col space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high w-fit">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Club Exclusivo Veracruz</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight leading-tight">
+          Tus compras de todos los días <br class="hidden sm:inline">
+<span class="relative inline-block text-secondary">
+            ahora te dan más.
+            <svg class="absolute left-0 -bottom-1 w-full h-2 text-secondary-container" preserveAspectRatio="none" viewBox="0 0 100 10">
+<path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" stroke-width="3"></path>
+</svg>
+</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+          Únete a <strong>Yepas Loyalty</strong> gratis. Acumula puntos por cada peso en tus snacks, bebidas y compras favoritas, y canjéalos por productos gratis o descuentos directos en caja.
+        </p>
+<!-- Botones CTA -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+<a class="inline-flex items-center justify-center gap-2 bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed font-headline-sm text-headline-sm px-6 py-3.5 rounded-lg shadow-md hover:shadow-lg transition-all active:scale-95 font-bold text-center" href="#registro">
+            ¡Regístrate Gratis y Recibe 100 Pts! ⚡
           </a>
-          <a class="flex items-center gap-space-sm px-space-md py-3 rounded-lg text-on-surface font-label-md hover:bg-surface-container-low transition-colors"
-            data-path="mis-puntos" href="#puntos">
-            <span class="material-symbols-outlined text-[22px] text-primary">stars</span>
-            Mis puntos
-          </a>
-          <a class="flex items-center gap-space-sm px-space-md py-3 rounded-lg text-on-surface font-label-md hover:bg-surface-container-low transition-colors"
-            data-path="promociones" href="#promociones">
-            <span class="material-symbols-outlined text-[22px] text-primary">local_offer</span>
-            Promociones
-          </a>
-          <a class="flex items-center gap-space-sm px-space-md py-3 rounded-lg text-on-surface font-label-md hover:bg-surface-container-low transition-colors"
-            data-path="movimientos" href="#movimientos">
-            <span class="material-symbols-outlined text-[22px] text-primary">receipt_long</span>
-            Movimientos
-          </a>
-          <a class="flex items-center gap-space-sm px-space-md py-3 rounded-lg text-on-surface font-label-md hover:bg-surface-container-low transition-colors"
-            data-path="mi-cuenta" href="#micuenta">
-            <span class="material-symbols-outlined text-[22px] text-primary">account_circle</span>
-            Mi cuenta
-          </a>
-        </nav>
-        <a class="flex items-center justify-center px-space-md py-3 font-label-md text-label-md text-primary bg-surface-container-lowest border-[1.5px] border-primary rounded-lg"
-          data-path="login" href="registro.html">Cerrar sesión</a>
-      </div>
-    </div>
-  </header>
-  <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]">
-    <div class="flex flex-col w-full">
-      <div class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-space-xl flex flex-col gap-space-xl">
-        <!-- BANNER / SALUDO SUPERIOR -->
-        <section id="inicio"
-          class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary via-primary-container to-yepas-navy p-space-lg lg:p-space-xl text-on-primary shadow-xl">
-          <div class="absolute -right-12 -top-12 w-80 h-80 rounded-full bg-reward-gold/10 blur-3xl pointer-events-none">
+<a class="inline-flex items-center justify-center gap-2 bg-surface-container text-on-surface hover:bg-surface-container-high font-label-lg text-label-lg px-5 py-3.5 rounded-lg transition-colors text-center" href="#como-funciona">
+            Ver cómo funciona
+            <span class="material-symbols-outlined text-sm">arrow_downward</span>
+</a>
+</div>
+<!-- Social Proof -->
+<div class="pt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+<div class="flex -space-x-2">
+<span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-container text-on-primary font-bold text-xs ring-2 ring-surface">VR</span>
+<span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-on-secondary font-bold text-xs ring-2 ring-surface">JC</span>
+<span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary-container font-bold text-xs ring-2 ring-surface">MG</span>
+<span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-highest text-primary font-bold text-xs ring-2 ring-surface">+32k</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-base fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-xs text-on-surface ml-1">4.9 / 5.0</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">
+              Más de <strong>32,000 veracruzanos</strong> ya ahorran en 96 sucursales Yepas
+            </p>
+</div>
+</div>
+</div>
+<!-- Card Graphic Display -->
+<div class="lg:col-span-5 flex justify-center items-center relative">
+<div class="w-full max-w-sm sm:max-w-md relative group">
+<!-- Fondo decorativo con resplandor -->
+<div class="absolute -inset-1.5 bg-gradient-to-r from-secondary-container via-primary-container to-secondary rounded-2xl blur-lg opacity-40 group-hover:opacity-75 transition duration-500"></div>
+<!-- Tarjeta Virtual Yepas -->
+<div class="relative bg-gradient-to-br from-primary via-primary-container to-primary rounded-xl p-6 text-on-primary shadow-xl flex flex-col justify-between aspect-[1.58/1] overflow-hidden">
+<!-- Patrón geométrico sutil de fondo -->
+<div class="absolute -right-12 -bottom-12 w-48 h-48 rounded-full bg-white/5 pointer-events-none"></div>
+<div class="absolute right-12 -top-12 w-36 h-36 rounded-full bg-secondary-container/10 pointer-events-none"></div>
+<!-- Cabecera de la Tarjeta -->
+<div class="flex items-start justify-between z-10">
+<div class="flex items-center gap-2">
+<img alt="Logotipo Oficial Yepas" class="h-10 w-auto object-contain filter drop-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUOO1v_dB87bu0mhmGjrOrA-S9hGMxmjn-BHXthI_54X21pj5B5wCfqw97ij-hdhr1nCDKUqDGEDTfpzqyq--ai7x7FGEoEEIb5MWSebwSIms4_8cunZwVMXGppFEM72VxSoM4ajm4xmG6SXBoIkrQOYVZ3C-mGW9sov5V29aRLY--C6n5ZNWb5_IkpuaOTdlEJqXgZHHiNGkd98XIKrzgQwQ4Bv3f-jOsCLbGvqVeqbviwRqsw6JtrWos1wyfosOknJQ">
+<div>
+<p class="font-label-sm text-label-sm tracking-wider uppercase opacity-80">Tarjeta Digital</p>
+<p class="font-headline-sm text-headline-sm font-bold text-secondary-fixed">LOYALTY CLUB</p>
+</div>
+</div>
+<!-- Chip Simulado Dorado -->
+<div class="w-10 h-7 rounded bg-gradient-to-tr from-amber-400 via-yellow-200 to-amber-500 shadow flex items-center justify-center p-1">
+<div class="w-full h-full border border-amber-700/40 rounded flex flex-col justify-between">
+<div class="w-full h-0.5 bg-amber-700/30"></div>
+<div class="w-full h-0.5 bg-amber-700/30"></div>
+</div>
+</div>
+</div>
+<!-- Centro con Balance y QR -->
+<div class="flex items-center justify-between my-4 z-10">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-container">Saldo Promocional</span>
+<p class="font-headline-lg text-headline-lg font-bold text-white tracking-tight flex items-center gap-1">
+                  +100 <span class="text-sm font-medium text-secondary-fixed">PUNTOS</span>
+</p>
+<span class="inline-block mt-0.5 px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-label-sm text-[10px]">Activo al instante</span>
+</div>
+<!-- Simulación QR de Socio -->
+<div class="bg-white p-2 rounded-lg shadow-sm flex flex-col items-center">
+<svg class="w-16 h-16 text-primary" fill="currentColor" viewBox="0 0 24 24">
+<path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 0h4v4h-4v-4zm-4-2h2v2h-2v-2zm-2 4h2v4h-2v-4zm6 2h2v2h-2v-2zm-4 2h2v2h-2v-2zm6-6h2v2h-2v-2zM6 6h2v2H6V6zm10 0h2v2h-2V6zM6 18h2v2H6v-2z"></path>
+</svg>
+<span class="text-[9px] font-bold text-primary tracking-tighter uppercase mt-0.5">Escanea en Caja</span>
+</div>
+</div>
+<!-- Pie de Tarjeta -->
+<div class="flex items-center justify-between z-10 border-t border-white/10 pt-2">
+<div>
+<p class="font-label-sm text-[10px] uppercase text-white/70">Nombre del Titular</p>
+<p class="font-label-md text-label-md font-semibold text-white">¡Nuevo Socio Yepas!</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-[10px] uppercase text-white/70">ID Socio</p>
+<p class="font-label-md text-label-md tracking-widest font-mono text-secondary-fixed">9600-••••-VER</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. CALCULADORA INTERACTIVA O SIMULADOR DE BENEFICIOS -->
+<section class="py-14 bg-surface-container-low">
+<div class="max-w-5xl mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto mb-10">
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary tracking-widest">Simulador en tiempo real</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-primary mt-1">Descubre cuánto ganas al mes con Yepas</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+          Calcula tus beneficios según tu consumo promedio de bebidas, botanas o despensa en nuestras tiendas.
+        </p>
+</div>
+<div class="relative rounded-2xl p-6 sm:p-10 shadow-xl bg-gradient-to-br from-primary via-primary-container to-primary text-on-primary border border-primary-container overflow-hidden">
+<!-- Watermark decorative icons in background -->
+<div class="absolute -right-8 -top-8 text-white/5 pointer-events-none select-none">
+<span class="material-symbols-outlined text-80" style="font-size: 160px; line-height: 1;">calculate</span>
+</div>
+<div class="absolute -left-10 -bottom-10 text-white/5 pointer-events-none select-none">
+<span class="material-symbols-outlined" style="font-size: 180px; line-height: 1;">payments</span>
+</div>
+<div class="absolute right-1/4 -bottom-6 text-white/5 pointer-events-none select-none hidden sm:block">
+<span class="material-symbols-outlined" style="font-size: 120px; line-height: 1;">redeem</span>
+</div>
+<div class="absolute left-1/3 top-2 text-secondary-container/10 pointer-events-none select-none">
+<span class="material-symbols-outlined" style="font-size: 72px; line-height: 1;">stars</span>
+</div>
+
+<div class="relative z-10">
+<!-- Selector Deslizante de Gasto -->
+<div class="mb-8">
+<div class="flex justify-between items-center mb-3">
+<label class="font-label-lg text-label-lg font-semibold text-surface-container-low flex items-center gap-2" for="weekly-spend">
+<span class="material-symbols-outlined text-secondary-container text-lg">tune</span>
+¿Cuánto gastas a la semana en tiendas de conveniencia?
+</label>
+<span class="font-headline-md text-headline-md font-bold text-secondary-fixed bg-surface-container-highest/20 px-3 py-1 rounded-lg border border-white/10" id="spend-display">$300 MXN</span>
+</div>
+<input class="w-full h-2.5 bg-surface-container-high/30 rounded-lg appearance-none cursor-pointer accent-secondary-container" id="weekly-spend" max="1200" min="100" oninput="updateCalculator(this.value)" step="50" type="range" value="300">
+<div class="flex justify-between text-xs text-surface-container-high/80 font-medium mt-2">
+<span class="">$100 /sem (Snacks)</span>
+<span class="">$300 /sem (Compras habituales)</span>
+<span class="">$600 /sem (Despensa semanal)</span>
+<span class="">$1,200 /sem (Compras familiares)</span>
+</div>
+</div>
+<!-- Métricas Dinámicas Calculadas -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Card 1 -->
+<div class="bg-surface rounded-xl p-5 shadow-sm text-center flex flex-col justify-center items-center border border-white/10">
+<span class="material-symbols-outlined text-secondary text-2xl mb-1">database</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Puntos mensuales</span>
+<p class="font-headline-xl text-headline-xl font-bold text-primary mt-1" id="calc-points">1,200 pts</p>
+<span class="text-xs text-emerald-600 font-semibold mt-1 bg-emerald-500/20 px-2 py-0.5 rounded-full">+100 pts bono bienvenida</span>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface rounded-xl p-5 shadow-sm text-center flex flex-col justify-center items-center border border-white/10">
+<span class="material-symbols-outlined text-primary text-2xl mb-1">local_cafe</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Cafés o botanas gratis</span>
+<p class="font-headline-xl text-headline-xl font-bold text-secondary mt-1" id="calc-rewards">5 Canjes</p>
+<span class="text-xs text-on-surface-variant font-medium mt-1 bg-surface-container px-2 py-0.5 rounded-full">Directo en mostrador</span>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface rounded-xl p-5 shadow-sm text-center flex flex-col justify-center items-center border border-white/10">
+<span class="material-symbols-outlined text-emerald-600 text-2xl mb-1">savings</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Ahorro directo en caja</span>
+<p class="font-headline-xl text-headline-xl font-bold text-primary mt-1" id="calc-cashback">$120 MXN</p>
+<span class="text-xs text-emerald-600 font-semibold mt-1 bg-emerald-500/20 px-2 py-0.5 rounded-full">Puntos = Dinero en efectivo</span>
+</div>
+</div>
+<!-- Badges de Beneficios Exclusivos -->
+<div class="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-around gap-4 text-xs font-semibold text-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container text-base">verified</span>
+<span class="">Puntos dobles en bebidas los fines de semana</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container text-base">redeem</span>
+<span class="">Promociones exclusivas solo para socios</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container text-base">cake</span>
+<span class="">Regalo sorpresa en tu cumpleaños</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. TRES PASOS SENCILLOS ("¿CÓMO FUNCIONA?") -->
+<section class="py-16 bg-surface" id="como-funciona">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary tracking-widest">Simple y Rápido</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-primary mt-1">¿Cómo funciona Yepas Loyalty?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+          Empieza a acumular y canjear en tres pasos sencillos sin complicaciones ni trámites largos.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+<!-- Paso 1 -->
+<div class="bg-surface-container-low p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow relative flex flex-col items-start">
+<div class="w-12 h-12 rounded-lg bg-primary text-on-primary flex items-center justify-center font-bold text-lg mb-6 shadow">
+            1
           </div>
-          <div
-            class="absolute -left-10 -bottom-10 w-64 h-64 rounded-full bg-secondary-fixed/15 blur-2xl pointer-events-none">
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-2">Regístrate en 30 segundos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Ingresa tu nombre y celular en este portal o pídelo directo a tu cajero en cualquier sucursal. No requieres tarjeta física.
+          </p>
+<div class="mt-6 flex items-center gap-2 text-xs font-semibold text-secondary">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="">Activación inmediata</span>
+</div>
+</div>
+<!-- Paso 2 -->
+<div class="bg-surface-container-low p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow relative flex flex-col items-start">
+<div class="w-12 h-12 rounded-lg bg-secondary text-on-secondary flex items-center justify-center font-bold text-lg mb-6 shadow">
+            2
           </div>
-          <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-space-lg">
-            <div class="flex flex-col gap-space-xs max-w-2xl">
-              <div class="flex flex-wrap items-center gap-space-sm">
-                <span
-                  class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-secondary-container text-yepas-navy font-label-sm text-label-sm uppercase tracking-wider shadow-sm">
-                  <span class="material-symbols-outlined text-sm text-yepas-navy"
-                    style="font-variation-settings: 'FILL' 1;">stars</span>
-                  Cliente Preferente
-                </span>
-                <span class="text-primary-fixed font-body-sm text-body-sm flex items-center gap-1">
-                  <span class="w-2 h-2 rounded-full bg-success-emerald animate-pulse"></span>
-                  Socio Activo #YP-9482
-                </span>
-              </div>
-              <h1 class="font-display text-headline-lg lg:text-display text-on-primary tracking-tight">
-                ¡Qué gusto verte de nuevo, Jorge!
-              </h1>
-              <p class="font-body-lg text-body-lg text-primary-fixed max-w-xl">
-                Aprovecha tus puntos y descubre promociones exclusivas en tu Yepas más cercano. Suma recompensas en cada
-                visita.
-              </p>
-            </div>
-            <div class="flex items-center gap-space-md self-start md:self-auto">
-              <button
-                class="group flex items-center gap-space-sm px-space-lg py-3 rounded-lg bg-reward-gold hover:bg-secondary-fixed-dim text-yepas-navy font-label-lg text-label-lg shadow-md transition-all active:scale-95"
-                id="open-qr-btn-hero">
-                <span
-                  class="material-symbols-outlined text-xl transition-transform group-hover:rotate-6">qr_code_2</span>
-                <span class="">Mi QR en Tienda</span>
-              </button>
-            </div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-2">Muestra tu código o di tu número</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Al pagar tus productos en cualquiera de las 96 sucursales Yepas en Veracruz, menciona tu número telefónico o muestra tu código QR.
+          </p>
+<div class="mt-6 flex items-center gap-2 text-xs font-semibold text-secondary">
+<span class="material-symbols-outlined text-sm">storefront</span>
+<span class="">Válido en 96 sucursales</span>
+</div>
+</div>
+<!-- Paso 3 -->
+<div class="bg-surface-container-low p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow relative flex flex-col items-start">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-bold text-lg mb-6 shadow">
+            3
           </div>
-        </section>
-        <!-- TARJETAS PRINCIPALES DE PUNTOS -->
-        <section id="puntos" class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
-          <!-- Tarjeta 1: Mis Puntos Disponibles -->
-          <div
-            class="lg:col-span-7 rounded-xl bg-surface-container-lowest p-space-lg lg:p-space-xl flex flex-col justify-between shadow-md relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-44 h-44 bg-surface-container rounded-bl-full -z-0 opacity-70"></div>
-            <div class="relative z-10 flex flex-col gap-space-md">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-space-sm">
-                  <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
-                    <span class="material-symbols-outlined text-2xl"
-                      style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
-                  </div>
-                  <div>
-                    <p class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Balance de
-                      Recompensas</p>
-                    <h2 class="font-headline-md text-headline-md text-on-surface">Mis puntos disponibles</h2>
-                  </div>
-                </div>
-                <span
-                  class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-success-emerald/10 text-success-emerald font-label-md text-label-md">
-                  <span class="material-symbols-outlined text-base">check_circle</span>
-                  Vigentes
-                </span>
-              </div>
-              <!-- Saldo destacado -->
-              <div class="py-space-md flex flex-wrap items-baseline gap-space-sm">
-                <span class="font-display text-display text-primary tracking-tight">2,450</span>
-                <span class="font-headline-md text-headline-md text-on-surface-variant font-semibold">puntos</span>
-                <span
-                  class="ml-auto inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm">
-                  <span class="material-symbols-outlined text-base text-primary">schedule</span>
-                  Última actualización: Hoy, 18:32
-                </span>
-              </div>
-              <div class="w-full bg-surface-container-high rounded-full h-2.5 overflow-hidden">
-                <div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 78%;"></div>
-              </div>
-              <div class="flex justify-between items-center text-on-surface-variant font-body-sm text-body-sm">
-                <span class="">Nivel Oro (2,000 pts)</span>
-                <span class="text-primary font-label-md">Faltan 550 pts para Platino</span>
-              </div>
-            </div>
-            <div class="relative z-10 pt-space-lg mt-space-md flex flex-wrap sm:flex-nowrap items-center gap-space-md">
-              <a
-                href="#movimientos"
-                class="w-full sm:w-auto flex-1 flex items-center justify-center gap-space-xs px-space-lg py-3 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg transition-all shadow-sm">
-                <span class="">Ver movimientos</span>
-                <span class="material-symbols-outlined text-lg">arrow_forward</span>
-              </a>
-              <button
-                class="w-full sm:w-auto flex items-center justify-center gap-space-xs px-space-lg py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg transition-all"
-                id="open-qr-btn-card">
-                <span class="material-symbols-outlined text-lg text-primary">qr_code_scanner</span>
-                <span class="">Mostrar código QR</span>
-              </button>
-            </div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-2">Disfruta tus recompensas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Usa tus puntos acumulados directamente como dinero en efectivo para pagar tu cuenta o llévate productos del catálogo sin costo.
+          </p>
+<div class="mt-6 flex items-center gap-2 text-xs font-semibold text-secondary">
+<span class="material-symbols-outlined text-sm">currency_exchange</span>
+<span class="">Canje al instante en caja</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. SECCIÓN DE RECOMPENSAS DESTACADAS -->
+<section class="py-16 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+<div>
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary tracking-widest">Catálogo de canje</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-primary mt-1">Recompensas favoritas en tienda</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Los productos más canjeados por nuestros socios Yepas este mes.</p>
+</div>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md font-bold text-primary hover:text-secondary transition-colors" href="#registro">
+          Ver catálogo completo
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Reward 1: Café -->
+<div class="bg-surface rounded-xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="h-44 w-full bg-surface-container rounded-lg overflow-hidden relative mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A hot cup of freshly brewed Mexican gourmet coffee in a paper takeaway cup on a wooden convenience store counter, with steam gently rising in morning sunlight, highly detailed commercial photograph." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeVel3KcVu59hAsvkjx25Zx5HDB7BPECjuLn8y8EfsU9ZgK4aB5jeR4jFP_94deO2AyJMVw9g02MXX4u597RCiMDxG9_qIjfDoimmfJcFS_qA8EGxE4OhzPPdwh7GK2qzaZ3TFPf-Mw-1osjdfz1EixLPrkOW_8GDl-zanW_GqzAilR2LxDuhY4NNLSwwyqlByHV177OQwCE4gdGiFsVcPojTHCPVi69-ud93QUKRI8PsA843NxdlCJw">
+<span class="absolute top-2 right-2 bg-primary text-on-primary font-bold text-xs px-2.5 py-1 rounded-full shadow">
+                250 pts
+              </span>
+</div>
+<span class="text-[11px] font-bold text-secondary uppercase tracking-wider">Cafetería &amp; Panadería</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary mt-0.5">Café Americano Gourmet Yepas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Café 100% de altura recién tostado y molido en tienda. Tamaño grande.</p>
+</div>
+<div class="pt-4 mt-2 border-t border-surface-container flex items-center justify-between">
+<span class="text-xs text-on-surface-variant">Precio normal: $28 MXN</span>
+<span class="text-xs font-bold text-emerald-600">¡GRATIS con Puntos!</span>
+</div>
+</div>
+<!-- Reward 2: Botanas -->
+<div class="bg-surface rounded-xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="h-44 w-full bg-surface-container rounded-lg overflow-hidden relative mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A crisp, vibrant bag of savory potato chips and Mexican snacks resting on a clean convenience store checkout surface with warm amber convenience store lighting, ultra sharp commercial product photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXrsmDtrSWp2KcW-c8qOi9e8xJWKuIz_8a_GQpCIopITmT-nChbqhtgTznI1roIJum2ZW0jJPJp7WjaiXo9PC9Xhb5zUyjWJG3LVtTJUfH7rtugcq6xTgewI9ANT9XqAqI7TcnztvxHWkKF0VMwG6_3Yy5AYUTx-Few4Kbl_Chuztq0F9GkD2PbJXYpvWFmkYg5ipFt06mpK9Wr1HiFvcQQzR_ZtpVcvwImBx39HPh3RH_vQfLY629gw">
+<span class="absolute top-2 right-2 bg-primary text-on-primary font-bold text-xs px-2.5 py-1 rounded-full shadow">
+                180 pts
+              </span>
+</div>
+<span class="text-[11px] font-bold text-secondary uppercase tracking-wider">Snacks &amp; Botanas</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary mt-0.5">Botanas y Papas Yepas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Papas fritas saladas, adobadas o cacahuates seleccionados de 90g.</p>
+</div>
+<div class="pt-4 mt-2 border-t border-surface-container flex items-center justify-between">
+<span class="text-xs text-on-surface-variant">Precio normal: $22 MXN</span>
+<span class="text-xs font-bold text-emerald-600">¡GRATIS con Puntos!</span>
+</div>
+</div>
+<!-- Reward 3: Refresco -->
+<div class="bg-surface rounded-xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="h-44 w-full bg-surface-container rounded-lg overflow-hidden relative mb-4">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="An ice cold refreshing 600ml soda beverage bottle covered in glistening condensation droplets, surrounded by ice cubes with crisp high contrast commercial beverage photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAygciCMFRstxSaOmQtOH92A-iGphKVNaG7lDNSoC48RDePCJX-I49Xv4zYilWhD0mKFa1htCYyu3xVzNFoo-EpWXg9RgauVCevTELkoDYeTINR42yzx_EmjXZ3_BqvLn-ov3nfc9XX8A91lM3MN_rkb3FZ5wjHNeK_ko2mGfmziyaXzyn_CUPQkA4j35aAFIJ4os5ShxJmy8eMpesW3QHDr03FZ5R4QAnhUeTcoMlJklF-LVNmgTQeZA">
+<span class="absolute top-2 right-2 bg-primary text-on-primary font-bold text-xs px-2.5 py-1 rounded-full shadow">
+                200 pts
+              </span>
+</div>
+<span class="text-[11px] font-bold text-secondary uppercase tracking-wider">Bebidas Frías</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary mt-0.5">Bebida Refrescante 600ml</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Refresco o agua saborizada bien fría participante en la hielera Yepas.</p>
+</div>
+<div class="pt-4 mt-2 border-t border-surface-container flex items-center justify-between">
+<span class="text-xs text-on-surface-variant">Precio normal: $20 MXN</span>
+<span class="text-xs font-bold text-emerald-600">¡GRATIS con Puntos!</span>
+</div>
+</div>
+<!-- Reward 4: Descuento $50 en Ticket -->
+<div class="bg-surface rounded-xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div>
+<div class="h-44 w-full bg-gradient-to-br from-primary-container via-primary to-primary rounded-lg overflow-hidden relative mb-4 flex flex-col items-center justify-center text-on-primary p-4">
+<span class="material-symbols-outlined text-4xl text-secondary-container mb-1">payments</span>
+<p class="font-headline-xl text-headline-xl font-bold tracking-tight text-white">$50 MXN</p>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed">Descuento Directo</p>
+<span class="absolute top-2 right-2 bg-secondary text-on-secondary font-bold text-xs px-2.5 py-1 rounded-full shadow">
+                500 pts
+              </span>
+</div>
+<span class="text-[11px] font-bold text-secondary uppercase tracking-wider">Dinero en Caja</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary mt-0.5">Descuento en ticket total</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Aplica directo al monto final de tu compra en cualquier departamento.</p>
+</div>
+<div class="pt-4 mt-2 border-t border-surface-container flex items-center justify-between">
+<span class="text-xs text-on-surface-variant">Válido en toda la tienda</span>
+<span class="text-xs font-bold text-secondary">Ahorro Efectivo</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. FORMULARIO RÁPIDO DE REGISTRO INTEGRADO -->
+<section class="py-16 bg-surface" id="registro">
+<div class="max-w-4xl mx-auto px-6">
+<div class="bg-primary text-on-primary rounded-2xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
+<!-- Decoración abstracta sutil -->
+<div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-white/5 pointer-events-none"></div>
+<div class="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-secondary/10 pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl mx-auto text-center mb-8">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold mb-3">
+<span class="material-symbols-outlined text-xs">bolt</span>
+            REGISTRO EXPRÉS EN 30 SEGUNDOS
           </div>
-          <!-- Tarjeta 2: Valor de mis puntos -->
-          <div
-            class="lg:col-span-5 rounded-xl bg-surface-container-low p-space-lg lg:p-space-xl flex flex-col justify-between shadow-sm relative">
-            <div class="flex flex-col gap-space-md">
-              <div class="flex items-center gap-space-sm">
-                <div
-                  class="w-10 h-10 rounded-lg bg-secondary-container/30 flex items-center justify-center text-yepas-navy">
-                  <span class="material-symbols-outlined text-2xl"
-                    style="font-variation-settings: 'FILL' 1;">local_activity</span>
-                </div>
-                <div>
-                  <h2 class="font-headline-md text-headline-md text-on-surface">Valor de mis puntos</h2>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">Ahorro tangible en cada visita</p>
-                </div>
-              </div>
-              <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
-                <div class="flex items-baseline justify-between">
-                  <span class="font-label-md text-label-md text-on-surface-variant">Equivalencia para canje</span>
-                  <span class="font-headline-sm text-headline-sm text-success-emerald">~$245.00 MXN</span>
-                </div>
-                <p class="font-body-md text-body-md text-on-surface">
-                  Tus puntos equivalen a descuentos directos en caja o productos de canje en tiendas Yepas. Recuerda
-                  mencionar tu número de celular registrado en cada compra para seguir multiplicándolos.
-                </p>
-              </div>
-              <div
-                class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-highest/60 text-on-surface-variant font-label-sm text-label-sm">
-                <span class="material-symbols-outlined text-base text-primary">info</span>
-                <span class="">Equivalencia estimada configurable sujeta a promociones de sucursal.</span>
-              </div>
-            </div>
-            <div class="pt-space-md mt-space-sm flex items-center justify-between">
-              <a class="inline-flex items-center gap-1.5 font-label-lg text-label-lg text-primary hover:text-primary-container font-semibold transition-colors"
-                href="#">
-                <span class="">Conocer cómo canjear mis puntos</span>
-                <span class="material-symbols-outlined text-base">launch</span>
-              </a>
-              <span class="material-symbols-outlined text-surface-container-highest text-3xl">storefront</span>
-            </div>
-          </div>
-        </section>
-        <!-- SECCIÓN "¿CÓMO ACUMULO PUNTOS?" -->
-        <section class="flex flex-col gap-space-lg">
-          <div class="flex flex-col gap-space-xs">
-            <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Paso a paso</span>
-            <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">¿Cómo acumulo puntos?</h2>
-            <p class="font-body-lg text-body-lg text-on-surface-variant">Sumar beneficios en cada visita a Yepas es muy
-              fácil</p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
-            <!-- Paso 1 -->
-            <div
-              class="relative group rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col gap-space-md">
-              <div class="flex items-center justify-between">
-                <div
-                  class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center transition-transform group-hover:scale-105">
-                  <span class="material-symbols-outlined text-2xl">store</span>
-                </div>
-                <span class="font-headline-lg text-headline-lg text-surface-dim font-bold">01</span>
-              </div>
-              <div class="flex flex-col gap-space-xs">
-                <h3 class="font-headline-sm text-headline-sm text-on-surface">1. Compra en Yepas</h3>
-                <p class="font-body-md text-body-md text-on-surface-variant">
-                  Visita cualquiera de nuestras sucursales y adquiere tus botanas, bebidas y productos favoritos.
-                </p>
-              </div>
-              <div class="mt-auto pt-space-xs flex items-center gap-1 font-label-md text-label-md text-primary">
-                <span class="">+1 punto por cada $10 gastados</span>
-              </div>
-            </div>
-            <!-- Paso 2 -->
-            <div
-              class="relative group rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col gap-space-md">
-              <div class="flex items-center justify-between">
-                <div
-                  class="w-12 h-12 rounded-xl bg-secondary-container/40 text-yepas-navy flex items-center justify-center transition-transform group-hover:scale-105">
-                  <span class="material-symbols-outlined text-2xl">smartphone</span>
-                </div>
-                <span class="font-headline-lg text-headline-lg text-surface-dim font-bold">02</span>
-              </div>
-              <div class="flex flex-col gap-space-xs">
-                <h3 class="font-headline-sm text-headline-sm text-on-surface">2. Proporciona tu número celular</h3>
-                <p class="font-body-md text-body-md text-on-surface-variant">
-                  Díselo al cajero antes de pagar tu compra o escanea tu código digital directamente desde tu pantalla.
-                </p>
-              </div>
-              <div class="mt-auto pt-space-xs flex items-center gap-1 font-label-md text-label-md text-yepas-navy">
-                <span class="">Rápido y sin tarjetas de plástico</span>
-              </div>
-            </div>
-            <!-- Paso 3 -->
-            <div
-              class="relative group rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col gap-space-md">
-              <div class="flex items-center justify-between">
-                <div
-                  class="w-12 h-12 rounded-xl bg-promo-coral/10 text-promo-coral flex items-center justify-center transition-transform group-hover:scale-105">
-                  <span class="material-symbols-outlined text-2xl">redeem</span>
-                </div>
-                <span class="font-headline-lg text-headline-lg text-surface-dim font-bold">03</span>
-              </div>
-              <div class="flex flex-col gap-space-xs">
-                <h3 class="font-headline-sm text-headline-sm text-on-surface">3. Recibe tus puntos</h3>
-                <p class="font-body-md text-body-md text-on-surface-variant">
-                  ¡Listo! Tus puntos se reflejan al instante en tu cuenta para canjear en tus compras subsecuentes.
-                </p>
-              </div>
-              <div class="mt-auto pt-space-xs flex items-center gap-1 font-label-md text-label-md text-promo-coral">
-                <span class="">Acreditación automática en caja</span>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- SECCIÓN "PROMOCIONES PARA TI" -->
-        <section id="promociones" class="flex flex-col gap-space-lg">
-          <div class="flex items-end justify-between">
-            <div class="flex flex-col gap-space-xs">
-              <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Beneficios del mes</span>
-              <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Promociones para ti</h2>
-            </div>
-            <a class="hidden sm:inline-flex items-center gap-1 font-label-lg text-label-lg text-primary hover:text-primary-container font-semibold transition-colors"
-              href="#">
-              <span class="">Ver todas las promociones</span>
-              <span class="material-symbols-outlined text-lg">chevron_right</span>
-            </a>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
-            <!-- Tarjeta Promoción 1: Puntos Dobles -->
-            <div
-              class="group rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
-              <div class="relative h-48 w-full overflow-hidden bg-surface-container">
-                <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  data-alt="Variedad de botanas mexicanas empaquetadas, papas fritas y refrescos embotellados en exhibidor de tienda de conveniencia con iluminación brillante de retail y detalles en rojo vibrante y azul cobalto"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5EjCUGg9YdaqVgWnQoHQEPM2e_iASPefQGAQzTf6JRmUmG9LJ0f7HRSdyX62dpkcJPEPhmrotCv9Bkz_mK8vW7fx6jIUCoN1_wWftPYK2qhznr3ADE3SSGLbENGX-g6soMuHpga68nnLwd5P9ugSWiyoROYsdX_vsL4wjjlMBXM6wnRNL7wquAiUGWTv5Zv_wp476Wy1dBein60GXwob3ureC1e4VCDpMSnd6qk2_AfKi5h6jjKFfzA">
-                <div class="absolute top-3 left-3">
-                  <span
-                    class="px-space-sm py-1 rounded-md bg-promo-coral text-on-error font-label-sm text-label-sm font-bold uppercase tracking-wider shadow-sm">
-                    PUNTOS x2
-                  </span>
-                </div>
-                <div
-                  class="absolute bottom-2 right-2 px-2.5 py-1 rounded-md bg-yepas-navy/80 backdrop-blur text-surface-bright font-label-sm text-label-sm flex items-center gap-1">
-                  <span class="material-symbols-outlined text-sm">local_offer</span>
-                  Snacks y Bebidas
-                </div>
-              </div>
-              <div class="p-space-lg flex-1 flex flex-col justify-between gap-space-md">
-                <div class="flex flex-col gap-space-xs">
-                  <h3
-                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
-                    Puntos Dobles</h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Obtén el doble de puntos en productos seleccionados de botanas, refrescos y pan dulce.
-                  </p>
-                  <div class="mt-space-xs flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
-                    <span class="material-symbols-outlined text-base text-primary">calendar_today</span>
-                    <span class="">Vigencia: 1 al 31 de octubre</span>
-                  </div>
-                </div>
-                <button
-                  class="w-full py-2.5 px-space-md rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md transition-all text-center">
-                  Ver promoción
-                </button>
-              </div>
-            </div>
-            <!-- Tarjeta Promoción 2: Puntos Triples Fin de Semana -->
-            <div
-              class="group rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
-              <div class="relative h-48 w-full overflow-hidden bg-surface-container">
-                <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  data-alt="Taza de café humeante recién preparado junto a un vaso frío con frappé helado y galletas sobre mostrador de tienda moderna Yepas, atmósfera cálida y matices dorados ámbar de café premium"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCABZe894XofFsjp35BY032987kA45XGyEyLuaoJBHbWULtEcaWFJQmBWyW0KJO4ObjoVN6nsADJYs_iEUIlFgrT6op2x1t7zncQjJneyx2chgP1JyuNHia8vMAPXL098sCy3rhOKJqCfuWdK-ruw00e7snq7bIygwR_ytTgmn_1-HLi0NFKTZ-Gfu23df3UzTmDsz9njgtZBFxH0AUSDu13cgOFBgxsN9NWxcGMTNE_hue_HJtcdAjAw">
-                <div class="absolute top-3 left-3">
-                  <span
-                    class="px-space-sm py-1 rounded-md bg-reward-gold text-yepas-navy font-label-sm text-label-sm font-bold uppercase tracking-wider shadow-sm">
-                    PUNTOS x3
-                  </span>
-                </div>
-                <div
-                  class="absolute bottom-2 right-2 px-2.5 py-1 rounded-md bg-yepas-navy/80 backdrop-blur text-surface-bright font-label-sm text-label-sm flex items-center gap-1">
-                  <span class="material-symbols-outlined text-sm">schedule</span>
-                  Viernes a Domingo
-                </div>
-              </div>
-              <div class="p-space-lg flex-1 flex flex-col justify-between gap-space-md">
-                <div class="flex flex-col gap-space-xs">
-                  <h3
-                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
-                    Puntos Triples de Fin de Semana</h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    Multiplica x3 tus puntos en toda la línea de cafés calientes, bebidas preparadas y snacks.
-                  </p>
-                  <div class="mt-space-xs flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
-                    <span class="material-symbols-outlined text-base text-primary">calendar_today</span>
-                    <span class="">Vigencia: Todos los viernes a domingos de octubre</span>
-                  </div>
-                </div>
-                <button
-                  class="w-full py-2.5 px-space-md rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md transition-all text-center">
-                  Ver promoción
-                </button>
-              </div>
-            </div>
-            <!-- Tarjeta Promoción 3: Combo Desayuno Yepas -->
-            <div
-              class="group rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
-              <div class="relative h-48 w-full overflow-hidden bg-surface-container">
-                <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  data-alt="Combo de desayuno tradicional mexicano con empanada horneada dorada y humeante junto a vaso de café americano grande en tienda Yepas, toma de producto nítida con profundidad de campo reducida"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdPOeOYK00pK4_TMjJOh21m02hv4rmPCk-HcMm8whQ1G0PISBTzaO6uoIWotbioTsL9VSbjrCa8ltCgGncfD_T8AcFhld7L5fVLRBZSMzsq4Jrg_89knudJzeR9GLrlF1aKD6NVHtv0y19-Rp6xlg6ZERmITpdd9M6L9wqy-5v7rnAvVjsJICOCVRwbYQaZ_66EC46BbU4A463UGUJAKRxJ0siYcX1xAqYhUwv61gWJJCxMSo66J5FHA">
-                <div class="absolute top-3 left-3">
-                  <span
-                    class="px-space-sm py-1 rounded-md bg-primary text-on-primary font-label-sm text-label-sm font-bold uppercase tracking-wider shadow-sm">
-                    PROMOCIÓN ESPECIAL
-                  </span>
-                </div>
-                <div
-                  class="absolute bottom-2 right-2 px-2.5 py-1 rounded-md bg-yepas-navy/80 backdrop-blur text-surface-bright font-label-sm text-label-sm flex items-center gap-1">
-                  <span class="material-symbols-outlined text-sm">bolt</span>
-                  +150 Puntos Extra
-                </div>
-              </div>
-              <div class="p-space-lg flex-1 flex flex-col justify-between gap-space-md">
-                <div class="flex flex-col gap-space-xs">
-                  <h3
-                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
-                    Combo Desayuno Yepas</h3>
-                  <p class="font-body-md text-body-md text-on-surface-variant">
-                    En la compra de tu café americano grande + empanada tradicional, llévate 150 puntos extra de regalo.
-                  </p>
-                  <div class="mt-space-xs flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
-                    <span class="material-symbols-outlined text-base text-primary">calendar_today</span>
-                    <span class="">Vigencia: Válido hasta agotar existencias</span>
-                  </div>
-                </div>
-                <button
-                  class="w-full py-2.5 px-space-md rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md transition-all text-center">
-                  Ver promoción
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="sm:hidden flex justify-center pt-2">
-            <a class="inline-flex items-center gap-1 font-label-lg text-label-lg text-primary" href="#">
-              <span class="">Ver todas las promociones</span>
-              <span class="material-symbols-outlined text-lg">chevron_right</span>
-            </a>
-          </div>
-        </section>
-        <!-- SECCIÓN "ENCUENTRA TUS PROMOCIONES" (Categorías visuales) -->
-        <section
-          class="rounded-xl bg-surface-container-low p-space-lg lg:p-space-xl flex flex-col gap-space-lg shadow-sm">
-          <div class="flex items-center justify-between">
-            <div class="flex flex-col gap-space-xs">
-              <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Filtro rápido</span>
-              <h2 class="font-headline-md text-headline-md text-on-surface">Explora promociones por categoría</h2>
-            </div>
-            <span class="material-symbols-outlined text-on-surface-variant text-2xl">tune</span>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-space-md">
-            <!-- Chip 1 -->
-            <button
-              class="category-chip group p-space-md rounded-xl bg-surface-container-lowest hover:bg-primary hover:text-on-primary shadow-sm transition-all flex flex-col items-center justify-center gap-space-sm text-center">
-              <div
-                class="w-12 h-12 rounded-full bg-promo-coral/10 group-hover:bg-on-primary/20 flex items-center justify-center text-promo-coral group-hover:text-on-primary transition-colors">
-                <span class="material-symbols-outlined text-2xl">local_fire_department</span>
-              </div>
-              <span
-                class="font-label-md text-label-md text-on-surface group-hover:text-on-primary transition-colors">Puntos
-                dobles</span>
+<h2 class="font-headline-xl text-headline-xl font-bold text-white tracking-tight">Crea tu cuenta de socio en segundos</h2>
+<p class="font-body-md text-body-md text-surface-container-high mt-2">
+            Llena tus datos para recibir al instante tu código QR y tus <strong>100 Puntos de bienvenida</strong> para tu próxima visita.
+          </p>
+</div>
+<form class="relative z-10 max-w-2xl mx-auto space-y-4" onsubmit="handleRegistration(event)">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Nombre Completo -->
+<div>
+<label class="block font-label-md text-label-md font-semibold text-surface-container-low mb-1.5" for="name">Nombre completo</label>
+<input class="w-full h-11 px-3.5 rounded-lg bg-surface text-primary placeholder-on-surface-variant/60 font-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container" id="name" placeholder="Ej. Roberto Aguilar Mendoza" required="" type="text">
+</div>
+<!-- Teléfono Celular -->
+<div>
+<label class="block font-label-md text-label-md font-semibold text-surface-container-low mb-1.5" for="phone">Teléfono celular (para caja)</label>
+<input class="w-full h-11 px-3.5 rounded-lg bg-surface text-primary placeholder-on-surface-variant/60 font-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container" id="phone" placeholder="Ej. 229 123 4567" required="" type="tel">
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Correo Electrónico -->
+<div>
+<label class="block font-label-md text-label-md font-semibold text-surface-container-low mb-1.5" for="email">Correo electrónico</label>
+<input class="w-full h-11 px-3.5 rounded-lg bg-surface text-primary placeholder-on-surface-variant/60 font-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container" id="email" placeholder="ejemplo@correo.com" required="" type="email">
+</div>
+<!-- Sucursal Favorita -->
+<div>
+<label class="block font-label-md text-label-md font-semibold text-surface-container-low mb-1.5" for="branch">Tu sucursal favorita Yepas</label>
+<select class="w-full h-11 px-3 rounded-lg bg-surface text-primary font-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container" id="branch" required="">
+<option disabled="" selected="" value="">Selecciona una tienda</option>
+<option value="dias-miron">Sucursal Av. Salvador Díaz Mirón</option>
+<option value="boca-del-rio">Sucursal Boca del Río - Bulevar</option>
+<option value="marti">Sucursal Av. Martí - Reforma</option>
+<option value="cuauhtemoc">Sucursal Av. Cuauhtémoc</option>
+<option value="independencia">Sucursal Centro Histórico Independencia</option>
+<option value="ruiz-cortines">Sucursal Blvd. Ruiz Cortines</option>
+<option value="plaza-cristal">Sucursal Plaza Cristal Veracruz</option>
+<option value="otra">Otra de las 96 sucursales</option>
+</select>
+</div>
+</div>
+<!-- Checkbox Términos -->
+<div class="flex items-start gap-2 pt-2">
+<input class="mt-1 h-4 w-4 rounded accent-secondary-container cursor-pointer" id="terms" required="" type="checkbox">
+<label class="font-body-sm text-body-sm text-surface-container-high leading-snug cursor-pointer" for="terms">
+              Acepto los <a class="text-secondary-fixed underline hover:text-white" data-path="terminos-y-condiciones" href="#">Términos y Condiciones</a> del programa Yepas Loyalty y el <a class="text-secondary-fixed underline hover:text-white" data-path="aviso-de-privacidad" href="#">Aviso de Privacidad</a>.
+            </label>
+</div>
+<!-- Botón de Registro -->
+<div class="pt-4">
+<button class="w-full h-12 bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container font-headline-sm text-headline-sm font-bold rounded-lg shadow-lg hover:shadow-xl transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer" type="submit">
+              Completar Registro y Activar 100 Puntos 🎉
             </button>
-            <!-- Chip 2 -->
-            <button
-              class="category-chip group p-space-md rounded-xl bg-surface-container-lowest hover:bg-primary hover:text-on-primary shadow-sm transition-all flex flex-col items-center justify-center gap-space-sm text-center">
-              <div
-                class="w-12 h-12 rounded-full bg-secondary-container/40 group-hover:bg-on-primary/20 flex items-center justify-center text-secondary group-hover:text-on-primary transition-colors">
-                <span class="material-symbols-outlined text-2xl">bolt</span>
-              </div>
-              <span
-                class="font-label-md text-label-md text-on-surface group-hover:text-on-primary transition-colors">Puntos
-                triples</span>
-            </button>
-            <!-- Chip 3 -->
-            <button
-              class="category-chip group p-space-md rounded-xl bg-surface-container-lowest hover:bg-primary hover:text-on-primary shadow-sm transition-all flex flex-col items-center justify-center gap-space-sm text-center">
-              <div
-                class="w-12 h-12 rounded-full bg-primary/10 group-hover:bg-on-primary/20 flex items-center justify-center text-primary group-hover:text-on-primary transition-colors">
-                <span class="material-symbols-outlined text-2xl">inventory_2</span>
-              </div>
-              <span
-                class="font-label-md text-label-md text-on-surface group-hover:text-on-primary transition-colors">Productos</span>
-            </button>
-            <!-- Chip 4 -->
-            <button
-              class="category-chip group p-space-md rounded-xl bg-surface-container-lowest hover:bg-primary hover:text-on-primary shadow-sm transition-all flex flex-col items-center justify-center gap-space-sm text-center">
-              <div
-                class="w-12 h-12 rounded-full bg-surface-container-highest group-hover:bg-on-primary/20 flex items-center justify-center text-on-surface group-hover:text-on-primary transition-colors">
-                <span class="material-symbols-outlined text-2xl">loyalty</span>
-              </div>
-              <span
-                class="font-label-md text-label-md text-on-surface group-hover:text-on-primary transition-colors">Marcas
-                aliadas</span>
-            </button>
-            <!-- Chip 5 -->
-            <button
-              class="category-chip group p-space-md rounded-xl bg-surface-container-lowest hover:bg-primary hover:text-on-primary shadow-sm transition-all flex flex-col items-center justify-center gap-space-sm text-center col-span-2 sm:col-span-1">
-              <div
-                class="w-12 h-12 rounded-full bg-success-emerald/10 group-hover:bg-on-primary/20 flex items-center justify-center text-success-emerald group-hover:text-on-primary transition-colors">
-                <span class="material-symbols-outlined text-2xl">grid_view</span>
-              </div>
-              <span
-                class="font-label-md text-label-md text-on-surface group-hover:text-on-primary transition-colors">Categorías</span>
-            </button>
-          </div>
-        </section>
-        <!-- SECCIÓN "ÚLTIMOS MOVIMIENTOS" Y "PERFIL Y SEGURIDAD" EN GRID 12 COLUMNAS -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
-          <!-- ÚLTIMOS MOVIMIENTOS (7 Cols) -->
-          <section id="movimientos"
-            class="lg:col-span-7 rounded-xl bg-surface-container-lowest p-space-lg lg:p-space-xl shadow-md flex flex-col gap-space-md">
-            <div class="flex items-center justify-between pb-space-xs">
-              <div class="flex items-center gap-space-sm">
-                <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
-                  <span class="material-symbols-outlined text-2xl">receipt_long</span>
-                </div>
-                <div>
-                  <h2 class="font-headline-md text-headline-md text-on-surface">Últimos movimientos</h2>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">Historial reciente de compras y canjes
-                  </p>
-                </div>
-              </div>
-              <a class="font-label-md text-label-md text-primary hover:text-primary-container font-semibold transition-colors"
-                href="#">
-                Ver completo
-              </a>
-            </div>
-            <div class="flex flex-col gap-space-sm">
-              <!-- Movimiento 1 -->
-              <div
-                class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between gap-space-md">
-                <div class="flex items-center gap-space-md min-w-0">
-                  <div
-                    class="w-10 h-10 rounded-full bg-success-emerald/10 text-success-emerald flex items-center justify-center shrink-0">
-                    <span class="material-symbols-outlined text-xl">add_circle</span>
-                  </div>
-                  <div class="flex flex-col min-w-0">
-                    <p class="font-label-lg text-label-lg text-on-surface truncate">Compra en Yepas (Sucursal Boulevard)
-                    </p>
-                    <span class="font-body-sm text-body-sm text-on-surface-variant">03 Octubre 2024 • Ticket
-                      #89211</span>
-                  </div>
-                </div>
-                <div class="flex flex-col items-end shrink-0">
-                  <span class="font-headline-sm text-headline-sm text-success-emerald font-bold">+120 pts</span>
-                  <span class="font-label-sm text-label-sm text-on-surface-variant">Acumulación</span>
-                </div>
-              </div>
-              <!-- Movimiento 2 -->
-              <div
-                class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between gap-space-md">
-                <div class="flex items-center gap-space-md min-w-0">
-                  <div
-                    class="w-10 h-10 rounded-full bg-success-emerald/10 text-success-emerald flex items-center justify-center shrink-0">
-                    <span class="material-symbols-outlined text-xl">add_circle</span>
-                  </div>
-                  <div class="flex flex-col min-w-0">
-                    <p class="font-label-lg text-label-lg text-on-surface truncate">Compra en Yepas (Sucursal Centro)
-                    </p>
-                    <span class="font-body-sm text-body-sm text-on-surface-variant">02 Octubre 2024 • Ticket
-                      #88430</span>
-                  </div>
-                </div>
-                <div class="flex flex-col items-end shrink-0">
-                  <span class="font-headline-sm text-headline-sm text-success-emerald font-bold">+85 pts</span>
-                  <span class="font-label-sm text-label-sm text-on-surface-variant">Acumulación</span>
-                </div>
-              </div>
-              <!-- Movimiento 3: Canje -->
-              <div
-                class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between gap-space-md">
-                <div class="flex items-center gap-space-md min-w-0">
-                  <div
-                    class="w-10 h-10 rounded-full bg-promo-coral/10 text-promo-coral flex items-center justify-center shrink-0">
-                    <span class="material-symbols-outlined text-xl">remove_circle</span>
-                  </div>
-                  <div class="flex flex-col min-w-0">
-                    <p class="font-label-lg text-label-lg text-on-surface truncate">Canje de puntos (Descuento en caja)
-                    </p>
-                    <span class="font-body-sm text-body-sm text-on-surface-variant">01 Octubre 2024 • Sucursal
-                      Aeropuerto</span>
-                  </div>
-                </div>
-                <div class="flex flex-col items-end shrink-0">
-                  <span class="font-headline-sm text-headline-sm text-promo-coral font-bold">-500 pts</span>
-                  <span class="font-label-sm text-label-sm text-on-surface-variant">Canje ($50 MXN)</span>
-                </div>
-              </div>
-              <!-- Movimiento 4 -->
-              <div
-                class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between gap-space-md">
-                <div class="flex items-center gap-space-md min-w-0">
-                  <div
-                    class="w-10 h-10 rounded-full bg-success-emerald/10 text-success-emerald flex items-center justify-center shrink-0">
-                    <span class="material-symbols-outlined text-xl">add_circle</span>
-                  </div>
-                  <div class="flex flex-col min-w-0">
-                    <p class="font-label-lg text-label-lg text-on-surface truncate">Puntos dobles en bebidas</p>
-                    <span class="font-body-sm text-body-sm text-on-surface-variant">28 Septiembre 2024 • Promo
-                      Refrescos</span>
-                  </div>
-                </div>
-                <div class="flex flex-col items-end shrink-0">
-                  <span class="font-headline-sm text-headline-sm text-success-emerald font-bold">+60 pts</span>
-                  <span class="font-label-sm text-label-sm text-on-surface-variant">Bono especial</span>
-                </div>
-              </div>
-            </div>
-            <button
-              class="mt-space-xs w-full py-2.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">
-              Cargar transacciones anteriores
-            </button>
-          </section>
-          <!-- PERFIL Y SEGURIDAD (5 Cols) -->
-          <section id="micuenta" class="lg:col-span-5 flex flex-col gap-space-lg">
-            <!-- Tarjeta de Perfil -->
-            <div
-              class="rounded-xl bg-surface-container-lowest p-space-lg lg:p-space-xl shadow-md flex flex-col gap-space-md">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-space-sm">
-                  <div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-                    <span class="material-symbols-outlined text-2xl">badge</span>
-                  </div>
-                  <div>
-                    <h2 class="font-headline-md text-headline-md text-on-surface">Información de mi cuenta</h2>
-                    <p class="font-body-sm text-body-sm text-on-surface-variant">Datos del titular de lealtad</p>
-                  </div>
-                </div>
-              </div>
-              <div class="space-y-space-sm pt-space-xs">
-                <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
-                  <span class="font-label-sm text-label-sm text-on-surface-variant">Nombre completo</span>
-                  <span class="font-body-md text-body-md text-on-surface font-semibold">Jorge Martínez Salgado</span>
-                </div>
-                <div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
-                  <div class="flex flex-col">
-                    <span class="font-label-sm text-label-sm text-on-surface-variant">Número de celular</span>
-                    <span class="font-body-md text-body-md text-on-surface font-semibold">+52 ••• ••• 4821</span>
-                  </div>
-                  <span
-                    class="px-2 py-0.5 rounded bg-success-emerald/15 text-success-emerald font-label-sm text-label-sm flex items-center gap-1">
-                    <span class="material-symbols-outlined text-sm">verified</span>
-                    Validado
-                  </span>
-                </div>
-                <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
-                  <span class="font-label-sm text-label-sm text-on-surface-variant">Fecha de nacimiento</span>
-                  <span class="font-body-md text-body-md text-on-surface font-semibold">14 de Mayo de 1988</span>
-                </div>
-                <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
-                  <span class="font-label-sm text-label-sm text-on-surface-variant">Correo electrónico</span>
-                  <span
-                    class="font-body-md text-body-md text-on-surface font-semibold">jorge.martinez***@email.com</span>
-                </div>
-              </div>
-              <button
-                class="mt-space-xs w-full flex items-center justify-center gap-space-xs px-space-md py-3 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all shadow-sm">
-                <span class="material-symbols-outlined text-lg">edit</span>
-                <span class="">Editar mis datos</span>
-              </button>
-            </div>
-            <!-- Aviso de Seguridad -->
-            <div class="rounded-xl bg-surface-container-low p-space-md shadow-sm flex items-start gap-space-md">
-              <div
-                class="w-10 h-10 rounded-full bg-success-emerald/15 text-success-emerald flex items-center justify-center shrink-0">
-                <span class="material-symbols-outlined text-2xl"
-                  style="font-variation-settings: 'FILL' 1;">security</span>
-              </div>
-              <div class="flex flex-col gap-0.5">
-                <span class="font-label-md text-label-md text-on-surface font-semibold">Cuenta protegida y
-                  verificada</span>
-                <p class="font-body-sm text-body-sm text-on-surface-variant">
-                  Tu cuenta está protegida mediante verificación de tu número celular. Yepas nunca te solicitará códigos
-                  confidenciales vía telefónica.
-                </p>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-      <!-- MODAL FLOTANTE / SHEET DE QR (Microinteracción para caja) -->
-      <div
-        class="fixed inset-0 z-50 bg-yepas-navy/70 backdrop-blur-sm hidden items-center justify-center p-4 transition-opacity"
-        id="qr-modal">
-        <div
-          class="w-full max-w-sm rounded-2xl bg-surface-container-lowest p-space-lg flex flex-col items-center gap-space-md shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
-          <button
-            class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"
-            id="close-qr-btn">
-            <span class="material-symbols-outlined text-lg">close</span>
-          </button>
-          <div class="flex flex-col items-center text-center gap-1 mt-2">
-            <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Escaneo en caja</span>
-            <h3 class="font-headline-md text-headline-md text-on-surface font-bold">Identificación Yepas</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant">Muestra este código al cajero para sumar o
-              canjear tus puntos</p>
-          </div>
-          <!-- Simulación de QR Code Vectorial -->
-          <div
-            class="p-4 bg-surface-container-lowest rounded-xl shadow-inner flex flex-col items-center justify-center">
-            <svg class="w-52 h-52 text-yepas-navy" fill="currentColor" viewBox="0 0 100 100">
-              <!-- Esquinas Marcadores QR -->
-              <rect fill="currentColor" height="28" rx="4" width="28" x="5" y="5"></rect>
-              <rect fill="white" height="20" rx="2" width="20" x="9" y="9"></rect>
-              <rect fill="currentColor" height="12" rx="1" width="12" x="13" y="13"></rect>
-              <rect fill="currentColor" height="28" rx="4" width="28" x="67" y="5"></rect>
-              <rect fill="white" height="20" rx="2" width="20" x="71" y="9"></rect>
-              <rect fill="currentColor" height="12" rx="1" width="12" x="75" y="13"></rect>
-              <rect fill="currentColor" height="28" rx="4" width="28" x="5" y="67"></rect>
-              <rect fill="white" height="20" rx="2" width="20" x="9" y="71"></rect>
-              <rect fill="currentColor" height="12" rx="1" width="12" x="13" y="75"></rect>
-              <!-- Malla simulada de datos -->
-              <rect height="6" width="6" x="38" y="8"></rect>
-              <rect height="6" width="6" x="48" y="8"></rect>
-              <rect height="6" width="6" x="56" y="18"></rect>
-              <rect height="6" width="6" x="38" y="24"></rect>
-              <rect height="8" width="8" x="46" y="32"></rect>
-              <rect height="6" width="6" x="8" y="38"></rect>
-              <rect height="6" width="6" x="18" y="44"></rect>
-              <rect height="6" width="6" x="8" y="52"></rect>
-              <rect height="6" width="6" x="68" y="38"></rect>
-              <rect height="6" width="6" x="78" y="44"></rect>
-              <rect height="6" width="6" x="88" y="52"></rect>
-              <rect height="6" width="6" x="38" y="68"></rect>
-              <rect height="6" width="6" x="48" y="76"></rect>
-              <rect height="6" width="6" x="56" y="84"></rect>
-              <rect height="6" width="6" x="68" y="68"></rect>
-              <rect height="6" width="6" x="78" y="78"></rect>
-              <rect height="6" width="6" x="86" y="86"></rect>
-              <rect height="8" width="8" x="36" y="50"></rect>
-              <rect height="6" width="6" x="52" y="56"></rect>
-              <rect height="4" width="4" x="62" y="60"></rect>
-            </svg>
-          </div>
-          <div class="flex flex-col items-center gap-1">
-            <span class="font-headline-sm text-headline-sm text-primary tracking-widest font-mono">YP-4821-JMS</span>
-            <span class="font-body-sm text-body-sm text-on-surface-variant">Socio: Jorge Martínez Salgado</span>
-          </div>
-          <div
-            class="w-full pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
-            <span class="flex items-center gap-1">
-              <span class="w-2 h-2 rounded-full bg-success-emerald"></span>
-              Brillo automático activo
-            </span>
-            <span class="">Vigencia: 05:00 min</span>
-          </div>
-        </div>
-      </div>
-      <script>
-        (function initYepasDashboard() {
-          const modal = document.getElementById('qr-modal');
-          const openBtnHero = document.getElementById('open-qr-btn-hero');
-          const openBtnCard = document.getElementById('open-qr-btn-card');
-          const closeBtn = document.getElementById('close-qr-btn');
+</div>
+<p class="text-center font-label-sm text-xs text-surface-container-high/80 pt-1">
+            🔒 Tus datos están protegidos. No compartimos tu información con terceros.
+          </p>
+</form>
+<!-- Mensaje de Confirmación (Oculto por defecto) -->
+<div class="hidden relative z-10 max-w-md mx-auto mt-6 p-4 rounded-lg bg-emerald-700/80 text-white text-center" id="success-banner">
+<p class="font-bold text-base">¡Felicidades! 🎉</p>
+<p class="text-xs mt-1">Tu cuenta fue creada con éxito. Presenta tu número telefónico en caja para empezar a acumular.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- MAPA & COBERTURA VERACRUZ -->
+<section class="py-12 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<div class="md:col-span-5 space-y-4">
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary tracking-widest">Cerca de ti siempre</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-primary">Presentes en cada rincón de Veracruz</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Con <strong>96 tiendas Yepas</strong> en la zona conurbada Veracruz-Boca del Río, Medellín, Xalapa y la región costera, siempre tienes una sucursal lista para acumular y redimir tus recompensas.
+        </p>
+<div class="flex items-center gap-4 pt-2">
+<div class="bg-surface p-3 rounded-lg shadow-sm">
+<p class="font-headline-md font-bold text-primary">96</p>
+<p class="font-label-sm text-[11px] text-on-surface-variant uppercase">Tiendas activas</p>
+</div>
+<div class="bg-surface p-3 rounded-lg shadow-sm">
+<p class="font-headline-md font-bold text-secondary">24/7</p>
+<p class="font-label-sm text-[11px] text-on-surface-variant uppercase">Sucursales clave</p>
+</div>
+<div class="bg-surface p-3 rounded-lg shadow-sm">
+<p class="font-headline-md font-bold text-emerald-700">100%</p>
+<p class="font-label-sm text-[11px] text-on-surface-variant uppercase">Veracruzanas</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-7">
+<div class="w-full h-72 rounded-2xl shadow-md bg-cover bg-center overflow-hidden relative" data-location="Veracruz, Mexico" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDS3HvTmEXQmQQPL5CIUfbBlcuN8thXtAQb-BEZe4Gr3bw6PzSR2v-DDRZeq4OrLmtAaxO_w3IEwBzB-gPJsgRwXUhq4XBNdAS3Y0XnUIbwzv_cYGHE9EuXU6QZ-k28FPvcTNswkSV3HXcDZps0HzMXL-mDoGfOFfUTVDrFnJ0zlM9XtsVwwxBnclMC0Ai9Azdo5N08Wkw8CYYGXRL1G4WQdgcX2be-IVmfQukQ07zogRTj-HvYvoV6tw')">
+<div class="absolute inset-0 bg-primary/20 pointer-events-none"></div>
+<div class="absolute bottom-4 left-4 bg-surface/95 backdrop-blur-md px-4 py-2.5 rounded-lg shadow text-primary flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">location_on</span>
+<div>
+<p class="font-label-md text-xs font-bold leading-tight">Red Yepas Cobertura Total</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight">Veracruz • Boca del Río • Cardel • Alvarado</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. FOOTER DE ENLACES DISCRETOS Y ACCESO ADMINISTRATIVO OCULTO -->
+<section class="py-6 bg-surface border-t border-surface-container">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3 text-xs text-on-surface-variant">
+<span class="">Tiendas Yepas S.A. de C.V.</span>
+<span class="">•</span>
+<span class="">Veracruz, México</span>
+</div>
+<!-- BOTÓN DISCRETO / OCULTO PARA EL LOGIN DE ADMINISTRADOR (REQUISITO EXPLICITO) -->
+<!-- Diseñado intencionalmente con bajo contraste y estilo minimalista para uso de personal interno y TI -->
+<div class="flex items-center">
+<a class="group inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-medium text-slate-400 hover:text-primary hover:bg-surface-container-high transition-all opacity-60 hover:opacity-100" data-path="staff-login" href="#" title="Acceso exclusivo para gerentes de sucursal, supervisores y personal de marketing">
+<span class="material-symbols-outlined text-xs group-hover:text-primary transition-colors">lock</span>
+<span class="tracking-tight">Portal Administrativo TI &amp; Marketing</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Lógica interactiva de la Calculadora de Beneficios
+  function updateCalculator(spend) {
+    const val = parseInt(spend, 10);
+    // Formatear gasto semanal
+    document.getElementById('spend-display').textContent = '$' + val.toLocaleString('es-MX') + ' MXN';
 
-          function openModal() {
-            if (!modal) return;
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-          }
+    // Estimación mensual (4 semanas)
+    // Supuesto: 1 peso = 1 punto acumulado
+    const monthlyPoints = val * 4;
+    document.getElementById('calc-points').textContent = monthlyPoints.toLocaleString('es-MX') + ' pts';
 
-          function closeModal() {
-            if (!modal) return;
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-          }
+    // Estimación de canjes de café/botana (~220 pts promedio por producto)
+    const rewards = Math.floor(monthlyPoints / 220);
+    document.getElementById('calc-rewards').textContent = rewards + (rewards === 1 ? ' Canje' : ' Canjes');
 
-          if (openBtnHero) openBtnHero.addEventListener('click', openModal);
-          if (openBtnCard) openBtnCard.addEventListener('click', openModal);
-          if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    // Estimación de cashback directo (~10% en valor de conveniencia)
+    const cashback = Math.round(monthlyPoints * 0.10);
+    document.getElementById('calc-cashback').textContent = '$' + cashback + ' MXN';
+  }
 
-          if (modal) {
-            modal.addEventListener('click', function (e) {
-              if (e.target === modal) closeModal();
-            });
-          }
+  // Manejo visual del envío de registro
+  function handleRegistration(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-sm">progress_activity</span> Procesando registro...';
+    
+    setTimeout(() => {
+      btn.style.display = 'none';
+      document.getElementById('success-banner').classList.remove('hidden');
+    }, 900);
+  }
+</script></main><footer class="w-full bg-surface-container-low pt-space-xl pb-margin mt-space-xl"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-space-xl"><div class="space-y-space-sm"><div class="flex items-center gap-2"><span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-headline-sm text-headline-sm">Y</span><span class="font-headline-sm text-headline-sm text-primary font-bold">Tiendas Yepas</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">El programa de lealtad oficial de Tiendas Yepas en Veracruz y la región. Acumula puntos, obtén promociones exclusivas y canjea al instante en caja.</p></div><div><h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm">Explorar</h4><ul class="space-y-space-xs font-body-sm text-body-sm"><li class="leading-none"><a class="text-on-surface-variant hover:text-on-surface" data-path="beneficios" href="#">Beneficios Exclusivos</a></li><li class="leading-none"><a class="text-on-surface-variant hover:text-on-surface" data-path="como-funciona" href="#">Mecánica de Puntos</a></li><li class="leading-none"><a class="text-on-surface-variant hover:text-on-surface" data-path="recompensas" href="#">Catálogo de Recompensas</a></li><li class="leading-none"><a class="text-on-surface-variant hover:text-on-surface" data-path="sucursales" href="#">Tiendas Participantes</a></li></ul></div><div><h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm">Legal &amp; Soporte</h4><ul class="space-y-space-xs font-body-sm text-body-sm"><li class="leading-none"><a class="text-on-surface-variant hover:text-on-surface" data-path="terminos-y-condiciones" href="#">Términos y Condiciones</a></li><li class="leading-none"><a class="text-on-surface-variant hover:text-on-surface" data-path="aviso-de-privacidad" href="#">Aviso de Privacidad</a></li><li class="leading-none"><a class="text-on-surface-variant hover:text-on-surface" data-path="preguntas-frecuentes" href="#">Preguntas Frecuentes</a></li><li class="leading-none"><a class="text-on-surface-variant hover:text-on-surface" data-path="contacto" href="#">Atención a Clientes</a></li></ul></div><div><h4 class="font-label-lg text-label-lg text-on-surface mb-space-sm">Administración</h4><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">Módulo operativo interno para supervisores de tienda y mercadotecnia.</p><a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary hover:text-primary-container" data-path="staff-login" href="#"><span class="material-symbols-outlined text-sm">shield_person</span>Acceso Staff / Administrador</a></div></div><div class="flex flex-col sm:flex-row items-center justify-between pt-space-md border-t border-surface-container text-on-surface-variant"><p class="font-label-sm text-label-sm">© 2025 Tiendas Yepas S.A. de C.V. Todos los derechos reservados.</p><div class="flex items-center gap-space-md mt-space-xs sm:mt-0"><span class="font-label-sm text-label-sm text-outline">Yepas Loyalty v2.4</span></div></div></div></footer>
 
-          // Filter chips active micro-interaction
-          const chips = document.querySelectorAll('.category-chip');
-          chips.forEach(chip => {
-            chip.addEventListener('click', function () {
-              chips.forEach(c => c.classList.remove('ring-2', 'ring-primary', 'bg-primary-fixed'));
-              this.classList.add('ring-2', 'ring-primary');
-            });
-          });
-
-          const menuToggle = document.getElementById('mobile-menu-toggle');
-          const mobileMenu = document.getElementById('mobile-menu');
-          const menuIcon = document.getElementById('mobile-menu-icon');
-
-          function setMobileMenuOpen(isOpen) {
-            if (!mobileMenu || !menuToggle || !menuIcon) return;
-            mobileMenu.classList.toggle('hidden', !isOpen);
-            menuToggle.setAttribute('aria-expanded', String(isOpen));
-            menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
-            menuIcon.textContent = isOpen ? 'close' : 'menu';
-            document.body.classList.toggle('overflow-hidden', isOpen);
-          }
-
-          if (menuToggle && mobileMenu) {
-            menuToggle.addEventListener('click', function () {
-              const isOpen = mobileMenu.classList.contains('hidden');
-              setMobileMenuOpen(isOpen);
-            });
-
-            mobileMenu.querySelectorAll('a').forEach(function (link) {
-              link.addEventListener('click', function () {
-                setMobileMenuOpen(false);
-              });
-            });
-
-            window.addEventListener('resize', function () {
-              if (window.innerWidth >= 1024) setMobileMenuOpen(false);
-            });
-
-            document.addEventListener('keydown', function (e) {
-              if (e.key === 'Escape') setMobileMenuOpen(false);
-            });
-          }
-        })();
-      </script>
-    </div>
-  </main>
-  <footer class="w-full bg-surface-container-low py-space-xl">
-    <div
-      class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-space-lg text-center md:text-left">
-      <div class="flex flex-col gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary">Yepas
-          Recompensas</span>
-        <p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Tiendas Yepas México. Todos los derechos
-          reservados.</p>
-      </div>
-      <nav class="flex flex-wrap justify-center gap-space-md"><a
-          class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
-          data-path="terminos-y-condiciones" href="#">Términos y condiciones</a><a
-          class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
-          data-path="aviso-de-privacidad" href="#">Aviso de privacidad</a><a
-          class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
-          data-path="ayuda" href="#">Ayuda</a><a
-          class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
-          data-path="contacto" href="#">Contacto</a></nav>
-    </div>
-  </footer>
-
-</body>
-
-</html>
+</body></html>

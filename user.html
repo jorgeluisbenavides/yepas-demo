@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="web_standard" name="shell-type">
+  <title>Yepas Recompensas</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Outfit:wght@600;700&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    #inicio,
+    #puntos,
+    #promociones,
+    #movimientos,
+    #micuenta {
+      scroll-margin-top: 6rem;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"on-primary-fixed": "#001848", "surface-bright": "#faf8ff", "secondary-container": "#fed000", "surface-container-high": "#e2e7ff", "yepas-navy": "#182B56", "surface-container-highest": "#dae2ff", "outline": "#737784", "background": "#faf8ff", "secondary": "#725c00", "outline-variant": "#c3c6d5", "on-error": "#ffffff", "on-error-container": "#93000a", "surface-container-low": "#f2f3ff", "inverse-on-surface": "#eef0ff", "surface": "#faf8ff", "tertiary-fixed": "#ffdad4", "on-tertiary-fixed-variant": "#920600", "promo-coral": "#E03A26", "success-emerald": "#00A86B", "reward-gold": "#FFD100", "surface-soft": "#F6F8FC", "surface-dim": "#ced9ff", "surface-variant": "#dae2ff", "on-primary-container": "#9fb8ff", "primary-container": "#0043a8", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#ffb4a7", "secondary-fixed-dim": "#edc200", "primary-fixed": "#dae2ff", "on-secondary-fixed": "#231b00", "error-container": "#ffdad6", "primary-fixed-dim": "#b2c5ff", "secondary-fixed": "#ffe07f", "on-primary-fixed-variant": "#0040a1", "on-tertiary-container": "#ffa191", "surface-container": "#eaedff", "on-secondary-fixed-variant": "#564500", "on-surface-variant": "#434653", "inverse-primary": "#b2c5ff", "on-tertiary-fixed": "#400100", "on-background": "#031944", "on-tertiary": "#ffffff", "tertiary": "#6d0400", "on-secondary-container": "#6f5900", "error": "#ba1a1a", "on-primary": "#ffffff", "surface-tint": "#2859bd", "tertiary-container": "#980700", "on-secondary": "#ffffff", "on-surface": "#031944", "inverse-surface": "#1c2f5a", "primary": "#002e79"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"margin-md": "2rem", "margin-lg": "3rem", "gutter-lg": "2rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "margin": "1rem", "space-md": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter-md": "1.5rem", "gutter": "1rem"}, "fontFamily": {"label-lg": ["Hanken Grotesk"], "headline-sm": ["Outfit"], "headline-lg-mobile": ["Outfit"], "body-sm": ["Hanken Grotesk"], "display": ["Outfit"], "label-md": ["Hanken Grotesk"], "headline-lg": ["Outfit"], "body-md": ["Hanken Grotesk"], "label-sm": ["Hanken Grotesk"], "headline-md": ["Outfit"], "body-lg": ["Hanken Grotesk"], "display-mobile": ["Outfit"]}, "fontSize": {"label-lg": ["15px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}], "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}], "headline-lg-mobile": ["26px", {"lineHeight": "32px", "fontWeight": "600"}], "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "display": ["44px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}], "headline-lg": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}], "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}], "body-lg": ["18px", {"lineHeight": "26px", "fontWeight": "400"}], "display-mobile": ["34px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]}}}};</script>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface">
+  <header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md">
+      <div class="flex items-center gap-space-lg min-w-0">
+        <a class="flex items-center gap-space-sm shrink-0" data-path="inicio" href="#inicio">
+          <img alt="Yepas" class="h-10 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtT31BUafLF1LGbiAqI3pmA9RbL6eMi1ALDcld2ef40-YDBI0Au7BPTCbbgN1HIy7w_PRzV3OajQj5ZIWz4BMnyihjU3GlevNNBLVLWJCSM-_DVBYj0pIye0j93d-vw-9gdEj0Y8Hi4wgcMUmu6IvLSvgbIlbjU8I-qYjo_cqQ-J9ny_4eaE1JrWkZYwxi5Czn8Mk9R2jmD-O_dpjIjUWC2exEaTmRFlvmgOeCv2hYhf303a0el5mHHNZhCdfhaf5OklE">
+          <span class="font-headline-sm text-headline-sm text-primary tracking-tight hidden sm:inline">Recompensas</span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-space-xs p-space-xs rounded-xl bg-surface-container-low"
+          data-active-classes="bg-primary text-on-primary rounded-lg">
+          <a aria-current="page"
+            class="px-space-md py-space-sm font-label-md transition-colors bg-primary text-on-primary rounded-lg"
+            data-path="inicio" href="#inicio">Inicio</a>
+          <a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
+            data-path="mis-puntos" href="#puntos">Mis puntos</a>
+          <a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
+            data-path="promociones" href="#promociones">Promociones</a>
+          <a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
+            data-path="movimientos" href="#movimientos">Movimientos</a>
+          <a class="px-space-md py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors rounded-lg"
+            data-path="mi-cuenta" href="#micuenta">Mi cuenta</a>
+        </nav>
+      </div>
+      <div class="flex items-center gap-space-md shrink-0">
+        <div class="hidden md:flex items-center gap-space-sm">
+          <span class="font-label-md text-label-md text-on-surface">Hola, Jorge</span>
+          <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+          </div>
+        </div>
+        <a class="hidden lg:inline-flex items-center justify-center px-space-md py-space-xs font-label-md text-label-md text-primary bg-surface-container-lowest border-[1.5px] border-primary rounded-lg hover:bg-primary hover:text-on-primary transition-all"
+          data-path="login" href="registro.html">Cerrar sesión</a>
+        <button type="button" id="mobile-menu-toggle" aria-controls="mobile-menu" aria-expanded="false"
+          class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container transition-colors"
+          aria-label="Abrir menú">
+          <span class="material-symbols-outlined text-[26px]" id="mobile-menu-icon">menu</span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden hidden border-t border-outline-variant/40 bg-surface/95 backdrop-blur-xl">
+      <div class="max-w-7xl mx-auto px-6 py-space-md flex flex-col gap-space-md">
+        <div class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+          <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-on-primary text-[20px]">person</span>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span class="font-label-md text-label-md text-on-surface">Hola, Jorge</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Socio #YP-9482</span>
+          </div>
+        </div>
+        <nav class="flex flex-col gap-1" aria-label="Navegación móvil">
+          <a class="flex items-center gap-space-sm px-space-md py-3 rounded-lg bg-primary text-on-primary font-label-md"
+            data-path="inicio" href="#inicio">
+            <span class="material-symbols-outlined text-[22px]">home</span>
+            Inicio
+          </a>
+          <a class="flex items-center gap-space-sm px-space-md py-3 rounded-lg text-on-surface font-label-md hover:bg-surface-container-low transition-colors"
+            data-path="mis-puntos" href="#puntos">
+            <span class="material-symbols-outlined text-[22px] text-primary">stars</span>
+            Mis puntos
+          </a>
+          <a class="flex items-center gap-space-sm px-space-md py-3 rounded-lg text-on-surface font-label-md hover:bg-surface-container-low transition-colors"
+            data-path="promociones" href="#promociones">
+            <span class="material-symbols-outlined text-[22px] text-primary">local_offer</span>
+            Promociones
+          </a>
+          <a class="flex items-center gap-space-sm px-space-md py-3 rounded-lg text-on-surface font-label-md hover:bg-surface-container-low transition-colors"
+            data-path="movimientos" href="#movimientos">
+            <span class="material-symbols-outlined text-[22px] text-primary">receipt_long</span>
+            Movimientos
+          </a>
+          <a class="flex items-center gap-space-sm px-space-md py-3 rounded-lg text-on-surface font-label-md hover:bg-surface-container-low transition-colors"
+            data-path="mi-cuenta" href="#micuenta">
+            <span class="material-symbols-outlined text-[22px] text-primary">account_circle</span>
+            Mi cuenta
+          </a>
+        </nav>
+        <a class="flex items-center justify-center px-space-md py-3 font-label-md text-label-md text-primary bg-surface-container-lowest border-[1.5px] border-primary rounded-lg"
+          data-path="login" href="registro.html">Cerrar sesión</a>
+      </div>
+    </div>
+  </header>
+  <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]">
+    <div class="flex flex-col w-full">
+      <div class="w-full max-w-7xl mx-auto px-6 lg:px-12 py-space-xl flex flex-col gap-space-xl">
+        <!-- BANNER / SALUDO SUPERIOR -->
+        <section id="inicio"
+          class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary via-primary-container to-yepas-navy p-space-lg lg:p-space-xl text-on-primary shadow-xl">
+          <div class="absolute -right-12 -top-12 w-80 h-80 rounded-full bg-reward-gold/10 blur-3xl pointer-events-none">
+          </div>
+          <div
+            class="absolute -left-10 -bottom-10 w-64 h-64 rounded-full bg-secondary-fixed/15 blur-2xl pointer-events-none">
+          </div>
+          <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-space-lg">
+            <div class="flex flex-col gap-space-xs max-w-2xl">
+              <div class="flex flex-wrap items-center gap-space-sm">
+                <span
+                  class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-secondary-container text-yepas-navy font-label-sm text-label-sm uppercase tracking-wider shadow-sm">
+                  <span class="material-symbols-outlined text-sm text-yepas-navy"
+                    style="font-variation-settings: 'FILL' 1;">stars</span>
+                  Cliente Preferente
+                </span>
+                <span class="text-primary-fixed font-body-sm text-body-sm flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-success-emerald animate-pulse"></span>
+                  Socio Activo #YP-9482
+                </span>
+              </div>
+              <h1 class="font-display text-headline-lg lg:text-display text-on-primary tracking-tight">
+                ¡Qué gusto verte de nuevo, Jorge!
+              </h1>
+              <p class="font-body-lg text-body-lg text-primary-fixed max-w-xl">
+                Aprovecha tus puntos y descubre promociones exclusivas en tu Yepas más cercano. Suma recompensas en cada
+                visita.
+              </p>
+            </div>
+            <div class="flex items-center gap-space-md self-start md:self-auto">
+              <button
+                class="group flex items-center gap-space-sm px-space-lg py-3 rounded-lg bg-reward-gold hover:bg-secondary-fixed-dim text-yepas-navy font-label-lg text-label-lg shadow-md transition-all active:scale-95"
+                id="open-qr-btn-hero">
+                <span
+                  class="material-symbols-outlined text-xl transition-transform group-hover:rotate-6">qr_code_2</span>
+                <span class="">Mi QR en Tienda</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- TARJETAS PRINCIPALES DE PUNTOS -->
+        <section id="puntos" class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+          <!-- Tarjeta 1: Mis Puntos Disponibles -->
+          <div
+            class="lg:col-span-7 rounded-xl bg-surface-container-lowest p-space-lg lg:p-space-xl flex flex-col justify-between shadow-md relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-44 h-44 bg-surface-container rounded-bl-full -z-0 opacity-70"></div>
+            <div class="relative z-10 flex flex-col gap-space-md">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-space-sm">
+                  <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+                    <span class="material-symbols-outlined text-2xl"
+                      style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+                  </div>
+                  <div>
+                    <p class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Balance de
+                      Recompensas</p>
+                    <h2 class="font-headline-md text-headline-md text-on-surface">Mis puntos disponibles</h2>
+                  </div>
+                </div>
+                <span
+                  class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-success-emerald/10 text-success-emerald font-label-md text-label-md">
+                  <span class="material-symbols-outlined text-base">check_circle</span>
+                  Vigentes
+                </span>
+              </div>
+              <!-- Saldo destacado -->
+              <div class="py-space-md flex flex-wrap items-baseline gap-space-sm">
+                <span class="font-display text-display text-primary tracking-tight">2,450</span>
+                <span class="font-headline-md text-headline-md text-on-surface-variant font-semibold">puntos</span>
+                <span
+                  class="ml-auto inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm">
+                  <span class="material-symbols-outlined text-base text-primary">schedule</span>
+                  Última actualización: Hoy, 18:32
+                </span>
+              </div>
+              <div class="w-full bg-surface-container-high rounded-full h-2.5 overflow-hidden">
+                <div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 78%;"></div>
+              </div>
+              <div class="flex justify-between items-center text-on-surface-variant font-body-sm text-body-sm">
+                <span class="">Nivel Oro (2,000 pts)</span>
+                <span class="text-primary font-label-md">Faltan 550 pts para Platino</span>
+              </div>
+            </div>
+            <div class="relative z-10 pt-space-lg mt-space-md flex flex-wrap sm:flex-nowrap items-center gap-space-md">
+              <a
+                href="#movimientos"
+                class="w-full sm:w-auto flex-1 flex items-center justify-center gap-space-xs px-space-lg py-3 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg transition-all shadow-sm">
+                <span class="">Ver movimientos</span>
+                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+              </a>
+              <button
+                class="w-full sm:w-auto flex items-center justify-center gap-space-xs px-space-lg py-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg transition-all"
+                id="open-qr-btn-card">
+                <span class="material-symbols-outlined text-lg text-primary">qr_code_scanner</span>
+                <span class="">Mostrar código QR</span>
+              </button>
+            </div>
+          </div>
+          <!-- Tarjeta 2: Valor de mis puntos -->
+          <div
+            class="lg:col-span-5 rounded-xl bg-surface-container-low p-space-lg lg:p-space-xl flex flex-col justify-between shadow-sm relative">
+            <div class="flex flex-col gap-space-md">
+              <div class="flex items-center gap-space-sm">
+                <div
+                  class="w-10 h-10 rounded-lg bg-secondary-container/30 flex items-center justify-center text-yepas-navy">
+                  <span class="material-symbols-outlined text-2xl"
+                    style="font-variation-settings: 'FILL' 1;">local_activity</span>
+                </div>
+                <div>
+                  <h2 class="font-headline-md text-headline-md text-on-surface">Valor de mis puntos</h2>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Ahorro tangible en cada visita</p>
+                </div>
+              </div>
+              <div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+                <div class="flex items-baseline justify-between">
+                  <span class="font-label-md text-label-md text-on-surface-variant">Equivalencia para canje</span>
+                  <span class="font-headline-sm text-headline-sm text-success-emerald">~$245.00 MXN</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface">
+                  Tus puntos equivalen a descuentos directos en caja o productos de canje en tiendas Yepas. Recuerda
+                  mencionar tu número de celular registrado en cada compra para seguir multiplicándolos.
+                </p>
+              </div>
+              <div
+                class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-highest/60 text-on-surface-variant font-label-sm text-label-sm">
+                <span class="material-symbols-outlined text-base text-primary">info</span>
+                <span class="">Equivalencia estimada configurable sujeta a promociones de sucursal.</span>
+              </div>
+            </div>
+            <div class="pt-space-md mt-space-sm flex items-center justify-between">
+              <a class="inline-flex items-center gap-1.5 font-label-lg text-label-lg text-primary hover:text-primary-container font-semibold transition-colors"
+                href="#">
+                <span class="">Conocer cómo canjear mis puntos</span>
+                <span class="material-symbols-outlined text-base">launch</span>
+              </a>
+              <span class="material-symbols-outlined text-surface-container-highest text-3xl">storefront</span>
+            </div>
+          </div>
+        </section>
+        <!-- SECCIÓN "¿CÓMO ACUMULO PUNTOS?" -->
+        <section class="flex flex-col gap-space-lg">
+          <div class="flex flex-col gap-space-xs">
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Paso a paso</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">¿Cómo acumulo puntos?</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">Sumar beneficios en cada visita a Yepas es muy
+              fácil</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+            <!-- Paso 1 -->
+            <div
+              class="relative group rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col gap-space-md">
+              <div class="flex items-center justify-between">
+                <div
+                  class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center transition-transform group-hover:scale-105">
+                  <span class="material-symbols-outlined text-2xl">store</span>
+                </div>
+                <span class="font-headline-lg text-headline-lg text-surface-dim font-bold">01</span>
+              </div>
+              <div class="flex flex-col gap-space-xs">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface">1. Compra en Yepas</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Visita cualquiera de nuestras sucursales y adquiere tus botanas, bebidas y productos favoritos.
+                </p>
+              </div>
+              <div class="mt-auto pt-space-xs flex items-center gap-1 font-label-md text-label-md text-primary">
+                <span class="">+1 punto por cada $10 gastados</span>
+              </div>
+            </div>
+            <!-- Paso 2 -->
+            <div
+              class="relative group rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col gap-space-md">
+              <div class="flex items-center justify-between">
+                <div
+                  class="w-12 h-12 rounded-xl bg-secondary-container/40 text-yepas-navy flex items-center justify-center transition-transform group-hover:scale-105">
+                  <span class="material-symbols-outlined text-2xl">smartphone</span>
+                </div>
+                <span class="font-headline-lg text-headline-lg text-surface-dim font-bold">02</span>
+              </div>
+              <div class="flex flex-col gap-space-xs">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface">2. Proporciona tu número celular</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Díselo al cajero antes de pagar tu compra o escanea tu código digital directamente desde tu pantalla.
+                </p>
+              </div>
+              <div class="mt-auto pt-space-xs flex items-center gap-1 font-label-md text-label-md text-yepas-navy">
+                <span class="">Rápido y sin tarjetas de plástico</span>
+              </div>
+            </div>
+            <!-- Paso 3 -->
+            <div
+              class="relative group rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col gap-space-md">
+              <div class="flex items-center justify-between">
+                <div
+                  class="w-12 h-12 rounded-xl bg-promo-coral/10 text-promo-coral flex items-center justify-center transition-transform group-hover:scale-105">
+                  <span class="material-symbols-outlined text-2xl">redeem</span>
+                </div>
+                <span class="font-headline-lg text-headline-lg text-surface-dim font-bold">03</span>
+              </div>
+              <div class="flex flex-col gap-space-xs">
+                <h3 class="font-headline-sm text-headline-sm text-on-surface">3. Recibe tus puntos</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  ¡Listo! Tus puntos se reflejan al instante en tu cuenta para canjear en tus compras subsecuentes.
+                </p>
+              </div>
+              <div class="mt-auto pt-space-xs flex items-center gap-1 font-label-md text-label-md text-promo-coral">
+                <span class="">Acreditación automática en caja</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- SECCIÓN "PROMOCIONES PARA TI" -->
+        <section id="promociones" class="flex flex-col gap-space-lg">
+          <div class="flex items-end justify-between">
+            <div class="flex flex-col gap-space-xs">
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Beneficios del mes</span>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Promociones para ti</h2>
+            </div>
+            <a class="hidden sm:inline-flex items-center gap-1 font-label-lg text-label-lg text-primary hover:text-primary-container font-semibold transition-colors"
+              href="#">
+              <span class="">Ver todas las promociones</span>
+              <span class="material-symbols-outlined text-lg">chevron_right</span>
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+            <!-- Tarjeta Promoción 1: Puntos Dobles -->
+            <div
+              class="group rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+              <div class="relative h-48 w-full overflow-hidden bg-surface-container">
+                <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  data-alt="Variedad de botanas mexicanas empaquetadas, papas fritas y refrescos embotellados en exhibidor de tienda de conveniencia con iluminación brillante de retail y detalles en rojo vibrante y azul cobalto"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5EjCUGg9YdaqVgWnQoHQEPM2e_iASPefQGAQzTf6JRmUmG9LJ0f7HRSdyX62dpkcJPEPhmrotCv9Bkz_mK8vW7fx6jIUCoN1_wWftPYK2qhznr3ADE3SSGLbENGX-g6soMuHpga68nnLwd5P9ugSWiyoROYsdX_vsL4wjjlMBXM6wnRNL7wquAiUGWTv5Zv_wp476Wy1dBein60GXwob3ureC1e4VCDpMSnd6qk2_AfKi5h6jjKFfzA">
+                <div class="absolute top-3 left-3">
+                  <span
+                    class="px-space-sm py-1 rounded-md bg-promo-coral text-on-error font-label-sm text-label-sm font-bold uppercase tracking-wider shadow-sm">
+                    PUNTOS x2
+                  </span>
+                </div>
+                <div
+                  class="absolute bottom-2 right-2 px-2.5 py-1 rounded-md bg-yepas-navy/80 backdrop-blur text-surface-bright font-label-sm text-label-sm flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm">local_offer</span>
+                  Snacks y Bebidas
+                </div>
+              </div>
+              <div class="p-space-lg flex-1 flex flex-col justify-between gap-space-md">
+                <div class="flex flex-col gap-space-xs">
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                    Puntos Dobles</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Obtén el doble de puntos en productos seleccionados de botanas, refrescos y pan dulce.
+                  </p>
+                  <div class="mt-space-xs flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+                    <span class="material-symbols-outlined text-base text-primary">calendar_today</span>
+                    <span class="">Vigencia: 1 al 31 de octubre</span>
+                  </div>
+                </div>
+                <button
+                  class="w-full py-2.5 px-space-md rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md transition-all text-center">
+                  Ver promoción
+                </button>
+              </div>
+            </div>
+            <!-- Tarjeta Promoción 2: Puntos Triples Fin de Semana -->
+            <div
+              class="group rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+              <div class="relative h-48 w-full overflow-hidden bg-surface-container">
+                <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  data-alt="Taza de café humeante recién preparado junto a un vaso frío con frappé helado y galletas sobre mostrador de tienda moderna Yepas, atmósfera cálida y matices dorados ámbar de café premium"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCABZe894XofFsjp35BY032987kA45XGyEyLuaoJBHbWULtEcaWFJQmBWyW0KJO4ObjoVN6nsADJYs_iEUIlFgrT6op2x1t7zncQjJneyx2chgP1JyuNHia8vMAPXL098sCy3rhOKJqCfuWdK-ruw00e7snq7bIygwR_ytTgmn_1-HLi0NFKTZ-Gfu23df3UzTmDsz9njgtZBFxH0AUSDu13cgOFBgxsN9NWxcGMTNE_hue_HJtcdAjAw">
+                <div class="absolute top-3 left-3">
+                  <span
+                    class="px-space-sm py-1 rounded-md bg-reward-gold text-yepas-navy font-label-sm text-label-sm font-bold uppercase tracking-wider shadow-sm">
+                    PUNTOS x3
+                  </span>
+                </div>
+                <div
+                  class="absolute bottom-2 right-2 px-2.5 py-1 rounded-md bg-yepas-navy/80 backdrop-blur text-surface-bright font-label-sm text-label-sm flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm">schedule</span>
+                  Viernes a Domingo
+                </div>
+              </div>
+              <div class="p-space-lg flex-1 flex flex-col justify-between gap-space-md">
+                <div class="flex flex-col gap-space-xs">
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                    Puntos Triples de Fin de Semana</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Multiplica x3 tus puntos en toda la línea de cafés calientes, bebidas preparadas y snacks.
+                  </p>
+                  <div class="mt-space-xs flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+                    <span class="material-symbols-outlined text-base text-primary">calendar_today</span>
+                    <span class="">Vigencia: Todos los viernes a domingos de octubre</span>
+                  </div>
+                </div>
+                <button
+                  class="w-full py-2.5 px-space-md rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md transition-all text-center">
+                  Ver promoción
+                </button>
+              </div>
+            </div>
+            <!-- Tarjeta Promoción 3: Combo Desayuno Yepas -->
+            <div
+              class="group rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col">
+              <div class="relative h-48 w-full overflow-hidden bg-surface-container">
+                <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  data-alt="Combo de desayuno tradicional mexicano con empanada horneada dorada y humeante junto a vaso de café americano grande en tienda Yepas, toma de producto nítida con profundidad de campo reducida"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdPOeOYK00pK4_TMjJOh21m02hv4rmPCk-HcMm8whQ1G0PISBTzaO6uoIWotbioTsL9VSbjrCa8ltCgGncfD_T8AcFhld7L5fVLRBZSMzsq4Jrg_89knudJzeR9GLrlF1aKD6NVHtv0y19-Rp6xlg6ZERmITpdd9M6L9wqy-5v7rnAvVjsJICOCVRwbYQaZ_66EC46BbU4A463UGUJAKRxJ0siYcX1xAqYhUwv61gWJJCxMSo66J5FHA">
+                <div class="absolute top-3 left-3">
+                  <span
+                    class="px-space-sm py-1 rounded-md bg-primary text-on-primary font-label-sm text-label-sm font-bold uppercase tracking-wider shadow-sm">
+                    PROMOCIÓN ESPECIAL
+                  </span>
+                </div>
+                <div
+                  class="absolute bottom-2 right-2 px-2.5 py-1 rounded-md bg-yepas-navy/80 backdrop-blur text-surface-bright font-label-sm text-label-sm flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm">bolt</span>
+                  +150 Puntos Extra
+                </div>
+              </div>
+              <div class="p-space-lg flex-1 flex flex-col justify-between gap-space-md">
+                <div class="flex flex-col gap-space-xs">
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                    Combo Desayuno Yepas</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    En la compra de tu café americano grande + empanada tradicional, llévate 150 puntos extra de regalo.
+                  </p>
+                  <div class="mt-space-xs flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+                    <span class="material-symbols-outlined text-base text-primary">calendar_today</span>
+                    <span class="">Vigencia: Válido hasta agotar existencias</span>
+                  </div>
+                </div>
+                <button
+                  class="w-full py-2.5 px-space-md rounded-lg bg-surface-container-low hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md transition-all text-center">
+                  Ver promoción
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="sm:hidden flex justify-center pt-2">
+            <a class="inline-flex items-center gap-1 font-label-lg text-label-lg text-primary" href="#">
+              <span class="">Ver todas las promociones</span>
+              <span class="material-symbols-outlined text-lg">chevron_right</span>
+            </a>
+          </div>
+        </section>
+        <!-- SECCIÓN "ENCUENTRA TUS PROMOCIONES" (Categorías visuales) -->
+        <section
+          class="rounded-xl bg-surface-container-low p-space-lg lg:p-space-xl flex flex-col gap-space-lg shadow-sm">
+          <div class="flex items-center justify-between">
+            <div class="flex flex-col gap-space-xs">
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Filtro rápido</span>
+              <h2 class="font-headline-md text-headline-md text-on-surface">Explora promociones por categoría</h2>
+            </div>
+            <span class="material-symbols-outlined text-on-surface-variant text-2xl">tune</span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-space-md">
+            <!-- Chip 1 -->
+            <button
+              class="category-chip group p-space-md rounded-xl bg-surface-container-lowest hover:bg-primary hover:text-on-primary shadow-sm transition-all flex flex-col items-center justify-center gap-space-sm text-center">
+              <div
+                class="w-12 h-12 rounded-full bg-promo-coral/10 group-hover:bg-on-primary/20 flex items-center justify-center text-promo-coral group-hover:text-on-primary transition-colors">
+                <span class="material-symbols-outlined text-2xl">local_fire_department</span>
+              </div>
+              <span
+                class="font-label-md text-label-md text-on-surface group-hover:text-on-primary transition-colors">Puntos
+                dobles</span>
+            </button>
+            <!-- Chip 2 -->
+            <button
+              class="category-chip group p-space-md rounded-xl bg-surface-container-lowest hover:bg-primary hover:text-on-primary shadow-sm transition-all flex flex-col items-center justify-center gap-space-sm text-center">
+              <div
+                class="w-12 h-12 rounded-full bg-secondary-container/40 group-hover:bg-on-primary/20 flex items-center justify-center text-secondary group-hover:text-on-primary transition-colors">
+                <span class="material-symbols-outlined text-2xl">bolt</span>
+              </div>
+              <span
+                class="font-label-md text-label-md text-on-surface group-hover:text-on-primary transition-colors">Puntos
+                triples</span>
+            </button>
+            <!-- Chip 3 -->
+            <button
+              class="category-chip group p-space-md rounded-xl bg-surface-container-lowest hover:bg-primary hover:text-on-primary shadow-sm transition-all flex flex-col items-center justify-center gap-space-sm text-center">
+              <div
+                class="w-12 h-12 rounded-full bg-primary/10 group-hover:bg-on-primary/20 flex items-center justify-center text-primary group-hover:text-on-primary transition-colors">
+                <span class="material-symbols-outlined text-2xl">inventory_2</span>
+              </div>
+              <span
+                class="font-label-md text-label-md text-on-surface group-hover:text-on-primary transition-colors">Productos</span>
+            </button>
+            <!-- Chip 4 -->
+            <button
+              class="category-chip group p-space-md rounded-xl bg-surface-container-lowest hover:bg-primary hover:text-on-primary shadow-sm transition-all flex flex-col items-center justify-center gap-space-sm text-center">
+              <div
+                class="w-12 h-12 rounded-full bg-surface-container-highest group-hover:bg-on-primary/20 flex items-center justify-center text-on-surface group-hover:text-on-primary transition-colors">
+                <span class="material-symbols-outlined text-2xl">loyalty</span>
+              </div>
+              <span
+                class="font-label-md text-label-md text-on-surface group-hover:text-on-primary transition-colors">Marcas
+                aliadas</span>
+            </button>
+            <!-- Chip 5 -->
+            <button
+              class="category-chip group p-space-md rounded-xl bg-surface-container-lowest hover:bg-primary hover:text-on-primary shadow-sm transition-all flex flex-col items-center justify-center gap-space-sm text-center col-span-2 sm:col-span-1">
+              <div
+                class="w-12 h-12 rounded-full bg-success-emerald/10 group-hover:bg-on-primary/20 flex items-center justify-center text-success-emerald group-hover:text-on-primary transition-colors">
+                <span class="material-symbols-outlined text-2xl">grid_view</span>
+              </div>
+              <span
+                class="font-label-md text-label-md text-on-surface group-hover:text-on-primary transition-colors">Categorías</span>
+            </button>
+          </div>
+        </section>
+        <!-- SECCIÓN "ÚLTIMOS MOVIMIENTOS" Y "PERFIL Y SEGURIDAD" EN GRID 12 COLUMNAS -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+          <!-- ÚLTIMOS MOVIMIENTOS (7 Cols) -->
+          <section id="movimientos"
+            class="lg:col-span-7 rounded-xl bg-surface-container-lowest p-space-lg lg:p-space-xl shadow-md flex flex-col gap-space-md">
+            <div class="flex items-center justify-between pb-space-xs">
+              <div class="flex items-center gap-space-sm">
+                <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined text-2xl">receipt_long</span>
+                </div>
+                <div>
+                  <h2 class="font-headline-md text-headline-md text-on-surface">Últimos movimientos</h2>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Historial reciente de compras y canjes
+                  </p>
+                </div>
+              </div>
+              <a class="font-label-md text-label-md text-primary hover:text-primary-container font-semibold transition-colors"
+                href="#">
+                Ver completo
+              </a>
+            </div>
+            <div class="flex flex-col gap-space-sm">
+              <!-- Movimiento 1 -->
+              <div
+                class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between gap-space-md">
+                <div class="flex items-center gap-space-md min-w-0">
+                  <div
+                    class="w-10 h-10 rounded-full bg-success-emerald/10 text-success-emerald flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-xl">add_circle</span>
+                  </div>
+                  <div class="flex flex-col min-w-0">
+                    <p class="font-label-lg text-label-lg text-on-surface truncate">Compra en Yepas (Sucursal Boulevard)
+                    </p>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">03 Octubre 2024 • Ticket
+                      #89211</span>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end shrink-0">
+                  <span class="font-headline-sm text-headline-sm text-success-emerald font-bold">+120 pts</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Acumulación</span>
+                </div>
+              </div>
+              <!-- Movimiento 2 -->
+              <div
+                class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between gap-space-md">
+                <div class="flex items-center gap-space-md min-w-0">
+                  <div
+                    class="w-10 h-10 rounded-full bg-success-emerald/10 text-success-emerald flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-xl">add_circle</span>
+                  </div>
+                  <div class="flex flex-col min-w-0">
+                    <p class="font-label-lg text-label-lg text-on-surface truncate">Compra en Yepas (Sucursal Centro)
+                    </p>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">02 Octubre 2024 • Ticket
+                      #88430</span>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end shrink-0">
+                  <span class="font-headline-sm text-headline-sm text-success-emerald font-bold">+85 pts</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Acumulación</span>
+                </div>
+              </div>
+              <!-- Movimiento 3: Canje -->
+              <div
+                class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between gap-space-md">
+                <div class="flex items-center gap-space-md min-w-0">
+                  <div
+                    class="w-10 h-10 rounded-full bg-promo-coral/10 text-promo-coral flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-xl">remove_circle</span>
+                  </div>
+                  <div class="flex flex-col min-w-0">
+                    <p class="font-label-lg text-label-lg text-on-surface truncate">Canje de puntos (Descuento en caja)
+                    </p>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">01 Octubre 2024 • Sucursal
+                      Aeropuerto</span>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end shrink-0">
+                  <span class="font-headline-sm text-headline-sm text-promo-coral font-bold">-500 pts</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Canje ($50 MXN)</span>
+                </div>
+              </div>
+              <!-- Movimiento 4 -->
+              <div
+                class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between gap-space-md">
+                <div class="flex items-center gap-space-md min-w-0">
+                  <div
+                    class="w-10 h-10 rounded-full bg-success-emerald/10 text-success-emerald flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-xl">add_circle</span>
+                  </div>
+                  <div class="flex flex-col min-w-0">
+                    <p class="font-label-lg text-label-lg text-on-surface truncate">Puntos dobles en bebidas</p>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">28 Septiembre 2024 • Promo
+                      Refrescos</span>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end shrink-0">
+                  <span class="font-headline-sm text-headline-sm text-success-emerald font-bold">+60 pts</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Bono especial</span>
+                </div>
+              </div>
+            </div>
+            <button
+              class="mt-space-xs w-full py-2.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+              Cargar transacciones anteriores
+            </button>
+          </section>
+          <!-- PERFIL Y SEGURIDAD (5 Cols) -->
+          <section id="micuenta" class="lg:col-span-5 flex flex-col gap-space-lg">
+            <!-- Tarjeta de Perfil -->
+            <div
+              class="rounded-xl bg-surface-container-lowest p-space-lg lg:p-space-xl shadow-md flex flex-col gap-space-md">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-space-sm">
+                  <div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-2xl">badge</span>
+                  </div>
+                  <div>
+                    <h2 class="font-headline-md text-headline-md text-on-surface">Información de mi cuenta</h2>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Datos del titular de lealtad</p>
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-space-sm pt-space-xs">
+                <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Nombre completo</span>
+                  <span class="font-body-md text-body-md text-on-surface font-semibold">Jorge Martínez Salgado</span>
+                </div>
+                <div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+                  <div class="flex flex-col">
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">Número de celular</span>
+                    <span class="font-body-md text-body-md text-on-surface font-semibold">+52 ••• ••• 4821</span>
+                  </div>
+                  <span
+                    class="px-2 py-0.5 rounded bg-success-emerald/15 text-success-emerald font-label-sm text-label-sm flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">verified</span>
+                    Validado
+                  </span>
+                </div>
+                <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Fecha de nacimiento</span>
+                  <span class="font-body-md text-body-md text-on-surface font-semibold">14 de Mayo de 1988</span>
+                </div>
+                <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col">
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Correo electrónico</span>
+                  <span
+                    class="font-body-md text-body-md text-on-surface font-semibold">jorge.martinez***@email.com</span>
+                </div>
+              </div>
+              <button
+                class="mt-space-xs w-full flex items-center justify-center gap-space-xs px-space-md py-3 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all shadow-sm">
+                <span class="material-symbols-outlined text-lg">edit</span>
+                <span class="">Editar mis datos</span>
+              </button>
+            </div>
+            <!-- Aviso de Seguridad -->
+            <div class="rounded-xl bg-surface-container-low p-space-md shadow-sm flex items-start gap-space-md">
+              <div
+                class="w-10 h-10 rounded-full bg-success-emerald/15 text-success-emerald flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-2xl"
+                  style="font-variation-settings: 'FILL' 1;">security</span>
+              </div>
+              <div class="flex flex-col gap-0.5">
+                <span class="font-label-md text-label-md text-on-surface font-semibold">Cuenta protegida y
+                  verificada</span>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Tu cuenta está protegida mediante verificación de tu número celular. Yepas nunca te solicitará códigos
+                  confidenciales vía telefónica.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- MODAL FLOTANTE / SHEET DE QR (Microinteracción para caja) -->
+      <div
+        class="fixed inset-0 z-50 bg-yepas-navy/70 backdrop-blur-sm hidden items-center justify-center p-4 transition-opacity"
+        id="qr-modal">
+        <div
+          class="w-full max-w-sm rounded-2xl bg-surface-container-lowest p-space-lg flex flex-col items-center gap-space-md shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
+          <button
+            class="absolute top-4 right-4 w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"
+            id="close-qr-btn">
+            <span class="material-symbols-outlined text-lg">close</span>
+          </button>
+          <div class="flex flex-col items-center text-center gap-1 mt-2">
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Escaneo en caja</span>
+            <h3 class="font-headline-md text-headline-md text-on-surface font-bold">Identificación Yepas</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Muestra este código al cajero para sumar o
+              canjear tus puntos</p>
+          </div>
+          <!-- Simulación de QR Code Vectorial -->
+          <div
+            class="p-4 bg-surface-container-lowest rounded-xl shadow-inner flex flex-col items-center justify-center">
+            <svg class="w-52 h-52 text-yepas-navy" fill="currentColor" viewBox="0 0 100 100">
+              <!-- Esquinas Marcadores QR -->
+              <rect fill="currentColor" height="28" rx="4" width="28" x="5" y="5"></rect>
+              <rect fill="white" height="20" rx="2" width="20" x="9" y="9"></rect>
+              <rect fill="currentColor" height="12" rx="1" width="12" x="13" y="13"></rect>
+              <rect fill="currentColor" height="28" rx="4" width="28" x="67" y="5"></rect>
+              <rect fill="white" height="20" rx="2" width="20" x="71" y="9"></rect>
+              <rect fill="currentColor" height="12" rx="1" width="12" x="75" y="13"></rect>
+              <rect fill="currentColor" height="28" rx="4" width="28" x="5" y="67"></rect>
+              <rect fill="white" height="20" rx="2" width="20" x="9" y="71"></rect>
+              <rect fill="currentColor" height="12" rx="1" width="12" x="13" y="75"></rect>
+              <!-- Malla simulada de datos -->
+              <rect height="6" width="6" x="38" y="8"></rect>
+              <rect height="6" width="6" x="48" y="8"></rect>
+              <rect height="6" width="6" x="56" y="18"></rect>
+              <rect height="6" width="6" x="38" y="24"></rect>
+              <rect height="8" width="8" x="46" y="32"></rect>
+              <rect height="6" width="6" x="8" y="38"></rect>
+              <rect height="6" width="6" x="18" y="44"></rect>
+              <rect height="6" width="6" x="8" y="52"></rect>
+              <rect height="6" width="6" x="68" y="38"></rect>
+              <rect height="6" width="6" x="78" y="44"></rect>
+              <rect height="6" width="6" x="88" y="52"></rect>
+              <rect height="6" width="6" x="38" y="68"></rect>
+              <rect height="6" width="6" x="48" y="76"></rect>
+              <rect height="6" width="6" x="56" y="84"></rect>
+              <rect height="6" width="6" x="68" y="68"></rect>
+              <rect height="6" width="6" x="78" y="78"></rect>
+              <rect height="6" width="6" x="86" y="86"></rect>
+              <rect height="8" width="8" x="36" y="50"></rect>
+              <rect height="6" width="6" x="52" y="56"></rect>
+              <rect height="4" width="4" x="62" y="60"></rect>
+            </svg>
+          </div>
+          <div class="flex flex-col items-center gap-1">
+            <span class="font-headline-sm text-headline-sm text-primary tracking-widest font-mono">YP-4821-JMS</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Socio: Jorge Martínez Salgado</span>
+          </div>
+          <div
+            class="w-full pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+            <span class="flex items-center gap-1">
+              <span class="w-2 h-2 rounded-full bg-success-emerald"></span>
+              Brillo automático activo
+            </span>
+            <span class="">Vigencia: 05:00 min</span>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function initYepasDashboard() {
+          const modal = document.getElementById('qr-modal');
+          const openBtnHero = document.getElementById('open-qr-btn-hero');
+          const openBtnCard = document.getElementById('open-qr-btn-card');
+          const closeBtn = document.getElementById('close-qr-btn');
+
+          function openModal() {
+            if (!modal) return;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+          }
+
+          function closeModal() {
+            if (!modal) return;
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+          }
+
+          if (openBtnHero) openBtnHero.addEventListener('click', openModal);
+          if (openBtnCard) openBtnCard.addEventListener('click', openModal);
+          if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+          if (modal) {
+            modal.addEventListener('click', function (e) {
+              if (e.target === modal) closeModal();
+            });
+          }
+
+          // Filter chips active micro-interaction
+          const chips = document.querySelectorAll('.category-chip');
+          chips.forEach(chip => {
+            chip.addEventListener('click', function () {
+              chips.forEach(c => c.classList.remove('ring-2', 'ring-primary', 'bg-primary-fixed'));
+              this.classList.add('ring-2', 'ring-primary');
+            });
+          });
+
+          const menuToggle = document.getElementById('mobile-menu-toggle');
+          const mobileMenu = document.getElementById('mobile-menu');
+          const menuIcon = document.getElementById('mobile-menu-icon');
+
+          function setMobileMenuOpen(isOpen) {
+            if (!mobileMenu || !menuToggle || !menuIcon) return;
+            mobileMenu.classList.toggle('hidden', !isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+            menuIcon.textContent = isOpen ? 'close' : 'menu';
+            document.body.classList.toggle('overflow-hidden', isOpen);
+          }
+
+          if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', function () {
+              const isOpen = mobileMenu.classList.contains('hidden');
+              setMobileMenuOpen(isOpen);
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(function (link) {
+              link.addEventListener('click', function () {
+                setMobileMenuOpen(false);
+              });
+            });
+
+            window.addEventListener('resize', function () {
+              if (window.innerWidth >= 1024) setMobileMenuOpen(false);
+            });
+
+            document.addEventListener('keydown', function (e) {
+              if (e.key === 'Escape') setMobileMenuOpen(false);
+            });
+          }
+        })();
+      </script>
+    </div>
+  </main>
+  <footer class="w-full bg-surface-container-low py-space-xl">
+    <div
+      class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-space-lg text-center md:text-left">
+      <div class="flex flex-col gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary">Yepas
+          Recompensas</span>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Tiendas Yepas México. Todos los derechos
+          reservados.</p>
+      </div>
+      <nav class="flex flex-wrap justify-center gap-space-md"><a
+          class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="terminos-y-condiciones" href="#">Términos y condiciones</a><a
+          class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="aviso-de-privacidad" href="#">Aviso de privacidad</a><a
+          class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="ayuda" href="#">Ayuda</a><a
+          class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors"
+          data-path="contacto" href="#">Contacto</a></nav>
+    </div>
+  </footer>
+
+</body>
+
+</html>

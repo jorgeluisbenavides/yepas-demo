@@ -1,0 +1,589 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"tertiary-fixed":"#85f8c4","on-primary-fixed":"#001848","surface-dim":"#cbdbf5","surface-container-high":"#dce9ff","on-primary":"#ffffff","on-secondary-container":"#6d4f00","surface-bright":"#f8f9ff","inverse-surface":"#213145","on-surface-variant":"#44464f","surface-container-low":"#eff4ff","on-error-container":"#93000a","outline":"#757780","on-tertiary-container":"#23a274","on-secondary":"#ffffff","on-tertiary-fixed":"#002114","on-primary-container":"#798ec8","primary-fixed-dim":"#b2c5ff","primary-container":"#0b2559","tertiary-container":"#002f1e","secondary-fixed":"#ffdea2","background":"#f8f9ff","surface":"#f8f9ff","on-tertiary":"#ffffff","on-primary-fixed-variant":"#2f457a","on-error":"#ffffff","surface-variant":"#d3e4fe","inverse-on-surface":"#eaf1ff","primary":"#001137","secondary-fixed-dim":"#fbbc20","surface-container-highest":"#d3e4fe","outline-variant":"#c5c6d1","surface-container-lowest":"#ffffff","surface-container":"#e5eeff","secondary-container":"#febf23","inverse-primary":"#b2c5ff","on-background":"#0b1c30","secondary":"#7a5900","error":"#ba1a1a","surface-tint":"#485d93","on-secondary-fixed-variant":"#5c4200","error-container":"#ffdad6","on-surface":"#0b1c30","on-tertiary-fixed-variant":"#005137","primary-fixed":"#dae2ff","tertiary":"#00180d","tertiary-fixed-dim":"#68dba9","on-secondary-fixed":"#261900"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin":"1.5rem","space-xl":"1.75rem","space-md":"0.875rem","space-sm":"0.5rem","space-xs":"0.25rem","space-lg":"1.25rem","gutter":"1rem"},"fontFamily":{"label-md":["Inter"],"headline-xl-mobile":["Inter"],"label-sm":["Inter"],"headline-md":["Inter"],"headline-xl":["Inter"],"label-lg":["Inter"],"headline-sm":["Inter"],"body-md":["Inter"],"body-sm":["Inter"],"headline-lg":["Inter"],"body-lg":["Inter"]},"fontSize":{"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-xl-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="px-space-lg pt-space-lg pb-space-md flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary font-headline-md font-bold text-headline-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-secondary-fixed text-headline-md">loyalty</span></div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary font-bold truncate tracking-tight">Yepas Loyalty</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate uppercase">Suite Comercial TI</span></div></div><div class="px-space-lg py-space-xs mb-space-sm"><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded"><span class="material-symbols-outlined text-label-md text-secondary">verified_user</span><span class="font-label-sm text-label-sm text-secondary truncate font-semibold">Marketing &amp; Comercial</span></div></div><nav class="px-space-sm space-y-space-md pb-space-lg" data-active-classes="bg-primary-container text-on-primary font-label-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="space-y-space-xs"><div class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Principal</div><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs rounded transition-colors bg-primary-container text-on-primary font-label-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-path="dashboard" href="#"><span class="material-symbols-outlined text-headline-sm">pie_chart</span><span class="truncate">Dashboard</span></a></div><div class="space-y-space-xs"><div class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Fidelización</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reglas-de-puntos" href="#"><span class="material-symbols-outlined text-headline-sm">tune</span><span class="truncate">Reglas de puntos</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="promociones" href="#"><span class="material-symbols-outlined text-headline-sm">redeem</span><span class="truncate">Promociones</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="canjes" href="#"><span class="material-symbols-outlined text-headline-sm">confirmation_number</span><span class="truncate">Canjes</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="movimientos" href="#"><span class="material-symbols-outlined text-headline-sm">swap_horiz</span><span class="truncate">Movimientos</span></a></div><div class="space-y-space-xs"><div class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Estrategia</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="clientes" href="#"><span class="material-symbols-outlined text-headline-sm">group</span><span class="truncate">Clientes</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="segmentacion" href="#"><span class="material-symbols-outlined text-headline-sm">filter_alt</span><span class="truncate">Segmentación</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reportes" href="#"><span class="material-symbols-outlined text-headline-sm">bar_chart</span><span class="truncate">Reportes</span></a></div><div class="space-y-space-xs"><div class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Sistema</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="sucursales" href="#"><span class="material-symbols-outlined text-headline-sm">store</span><span class="truncate">Sucursales</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="auditoria-historial" href="#"><span class="material-symbols-outlined text-headline-sm">history</span><span class="truncate">Auditoría / Historial</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="configuracion" href="#"><span class="material-symbols-outlined text-headline-sm">settings</span><span class="truncate">Configuración</span></a></div></nav></div><div class="p-space-md m-space-sm bg-surface-container-low rounded-lg space-y-space-xs"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-primary font-bold">Producción</span><span class="text-outline text-label-sm font-label-sm">•</span><span class="font-label-sm text-label-sm text-on-surface-variant">96 Sucursales</span></div><p class="font-body-sm text-body-sm text-outline leading-tight">Control Comercial verificado por TI</p></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0 flex-1"><div class="relative flex-1 max-w-md"><span class="material-symbols-outlined absolute left-3 top-2.5 text-headline-sm text-outline pointer-events-none">search</span><input class="w-full h-9 pl-9 pr-space-md bg-surface-container-lowest text-on-surface placeholder:text-outline text-body-sm font-body-sm rounded shadow-[0_1px_8px_rgba(0,0,0,0.04)] focus:outline-none focus:bg-surface-container-low" placeholder="Buscar por cliente, regla, promoción, sucursal..." type="search"></div><div class="hidden xl:flex items-center gap-space-xs bg-surface-container-high px-space-md py-1.5 rounded-full"><span class="material-symbols-outlined text-headline-sm text-on-surface">shield</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">Seguridad TI: Gobernanza Activa (Modo Marketing)</span></div></div><div class="flex items-center gap-space-md shrink-0"><button class="relative p-1.5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-headline-sm">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary-container"></span></button><button class="p-1.5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-headline-sm">help_outline</span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="text-right hidden sm:block"><div class="font-label-md text-label-md text-primary leading-tight font-semibold">Marketing Yepas</div><div class="font-label-sm text-label-sm text-outline leading-tight">Adm. Comercial</div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg space-y-space-lg max-w-[1720px] mx-auto w-full">
+<!-- BARRA DE GOBERNANZA TI / POS -->
+<div class="bg-surface-container-low rounded-lg p-space-sm px-space-md flex flex-wrap items-center justify-between gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-tertiary-fixed text-tertiary font-headline-sm">
+<span class="material-symbols-outlined text-headline-sm">verified</span>
+</span>
+<div class="flex items-center gap-space-xs text-body-sm font-body-sm truncate">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Modo Gestión Comercial Activo</span>
+<span class="text-outline">•</span>
+<span class="text-on-surface-variant truncate">La emisión y canjes están auditados y sincronizados en tiempo real con los 96 puntos de venta POS Yepas.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-tertiary-container">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-ping"></span>
+<span class="">Latencia POS: 14ms</span>
+</div>
+<span class="text-outline text-label-sm font-label-sm">|</span>
+<span class="font-label-sm text-label-sm text-outline">Última sinc.: Hace 48s</span>
+</div>
+</div>
+<!-- CABECERA PRINCIPAL Y ACCIONES COMERCIALES -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md pt-space-xs">
+<div class="space-y-space-xs max-w-2xl">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Control Central POS &amp; Fidelización</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-label-sm font-label-sm font-semibold">Q4 Fiscal</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">Resumen del programa de lealtad</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Monitoreo en tiempo real de clientes, transacciones y emisión de puntos Yepas</p>
+</div>
+<!-- BOTONES DE ACCIÓN RÁPIDA -->
+<div class="flex items-center gap-space-sm flex-wrap shrink-0">
+<button class="h-9 px-space-md bg-surface-container-highest hover:bg-surface-container-high text-primary font-label-md text-label-md rounded flex items-center gap-space-xs transition-colors shadow-sm" id="btn-exportar" type="button">
+<span class="material-symbols-outlined text-headline-sm">download</span>
+<span class="">Exportar corte</span>
+</button>
+<button class="h-9 px-space-md bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md rounded flex items-center gap-space-xs transition-colors shadow-sm" id="btn-regla" type="button">
+<span class="material-symbols-outlined text-headline-sm">tune</span>
+<span class="">+ Nueva regla</span>
+</button>
+<button class="h-9 px-space-md bg-secondary-container hover:bg-secondary-fixed-dim text-primary font-label-md text-label-md rounded flex items-center gap-space-xs transition-all shadow-sm" id="btn-promocion" type="button">
+<span class="material-symbols-outlined text-headline-sm">add_circle</span>
+<span class="">+ Nueva promoción</span>
+</button>
+</div>
+</div>
+<!-- BANNER CAMPAÑA DESTACADA MARKETING -->
+<div class="relative overflow-hidden bg-primary text-on-primary rounded-xl p-space-md lg:p-space-lg shadow-md">
+<div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-headline-lg font-bold">campaign</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed font-semibold">Próxima campaña programada</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+<span class="font-label-sm text-label-sm text-surface-container-high">Automático POS</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-primary font-bold">Fin de semana triple: Inicia en 2 días en las 96 sucursales</h2>
+<p class="font-body-sm text-body-sm text-surface-dim mt-0.5">Multiplicador 3x en canasta de conveniencia y bebidas frías. Auditoría fiscal y topes POS validados.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="hidden xl:flex flex-col text-right mr-space-xs">
+<span class="font-label-sm text-label-sm text-surface-dim">Impacto estimado</span>
+<span class="font-headline-sm text-headline-sm text-secondary-fixed font-bold">+18.5% en ventas</span>
+</div>
+<button class="h-9 px-space-md bg-on-primary text-primary hover:bg-surface-container-lowest font-label-md text-label-md rounded flex items-center gap-space-xs transition-colors shadow-sm" type="button">
+<span class="">Ver detalles y reglas</span>
+<span class="material-symbols-outlined text-headline-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- TARJETAS DE MÉTRICAS (6 KPIS CON SPARKLINE Y BADGES) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-space-md">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="flex items-center justify-between gap-space-xs mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider font-semibold">Clientes registrados</span>
+<span class="w-8 h-8 rounded bg-surface-container-low text-primary flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-headline-sm">groups</span>
+</span>
+</div>
+<div>
+<div class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">32,450</div>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="inline-flex items-center gap-0.5 text-on-tertiary-container bg-surface-container-low px-1.5 py-0.5 rounded font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-label-sm">trending_up</span>+12.5%
+            </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">vs mes anterior</span>
+</div>
+</div>
+<div class="h-7 w-full mt-space-md pt-1">
+<svg class="w-full h-full text-on-tertiary-container overflow-visible" fill="none" viewBox="0 0 100 24">
+<path d="M0 20 L16 17 L32 18 L48 12 L64 14 L80 6 L100 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M0 20 L16 17 L32 18 L48 12 L64 14 L80 6 L100 2 L100 24 L0 24 Z" fill="currentColor" fill-opacity="0.12"></path>
+</svg>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="flex items-center justify-between gap-space-xs mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider font-semibold">Clientes activos</span>
+<span class="w-8 h-8 rounded bg-surface-container-low text-on-tertiary-container flex items-center justify-center group-hover:bg-tertiary-container group-hover:text-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined text-headline-sm">how_to_reg</span>
+</span>
+</div>
+<div>
+<div class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">24,180</div>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="inline-flex items-center gap-0.5 text-on-tertiary-container bg-surface-container-low px-1.5 py-0.5 rounded font-label-sm text-label-sm font-bold">
+              74.5%
+            </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">tasa engagement</span>
+</div>
+</div>
+<div class="h-7 w-full mt-space-md pt-1">
+<svg class="w-full h-full text-on-tertiary-container overflow-visible" fill="none" viewBox="0 0 100 24">
+<path d="M0 16 L18 19 L36 13 L54 11 L72 8 L88 9 L100 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M0 16 L18 19 L36 13 L54 11 L72 8 L88 9 L100 3 L100 24 L0 24 Z" fill="currentColor" fill-opacity="0.12"></path>
+</svg>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="flex items-center justify-between gap-space-xs mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider font-semibold">Puntos otorgados</span>
+<span class="w-8 h-8 rounded bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-headline-sm">military_tech</span>
+</span>
+</div>
+<div>
+<div class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">1.24M <span class="font-label-md text-label-md font-normal text-on-surface-variant">pts</span></div>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="inline-flex items-center text-primary bg-surface-container-high px-1.5 py-0.5 rounded font-label-sm text-label-sm font-bold">
+              +$124.5k
+            </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">equiv. MXN</span>
+</div>
+</div>
+<div class="h-7 w-full mt-space-md pt-1">
+<svg class="w-full h-full text-primary overflow-visible" fill="none" viewBox="0 0 100 24">
+<path d="M0 18 L20 15 L40 10 L60 12 L80 5 L100 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M0 18 L20 15 L40 10 L60 12 L80 5 L100 1 L100 24 L0 24 Z" fill="currentColor" fill-opacity="0.1"></path>
+</svg>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="flex items-center justify-between gap-space-xs mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider font-semibold">Puntos canjeados</span>
+<span class="w-8 h-8 rounded bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-headline-sm">redeem</span>
+</span>
+</div>
+<div>
+<div class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">385.4k <span class="font-label-md text-label-md font-normal text-on-surface-variant">pts</span></div>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="inline-flex items-center text-secondary bg-surface-container-high px-1.5 py-0.5 rounded font-label-sm text-label-sm font-bold">
+              30.9%
+            </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">redención neta</span>
+</div>
+</div>
+<div class="h-7 w-full mt-space-md pt-1">
+<svg class="w-full h-full text-secondary overflow-visible" fill="none" viewBox="0 0 100 24">
+<path d="M0 22 L20 18 L40 16 L60 10 L80 12 L100 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M0 22 L20 18 L40 16 L60 10 L80 12 L100 8 L100 24 L0 24 Z" fill="currentColor" fill-opacity="0.18"></path>
+</svg>
+</div>
+</div>
+<!-- KPI 5 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="flex items-center justify-between gap-space-xs mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider font-semibold">Frecuencia compra</span>
+<span class="w-8 h-8 rounded bg-surface-container-low text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-headline-sm">bolt</span>
+</span>
+</div>
+<div>
+<div class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">+8.4%</div>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="font-label-sm text-label-sm text-primary font-bold bg-surface-container-low px-1.5 py-0.5 rounded">2.8 visitas</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">/ sem x socio</span>
+</div>
+</div>
+<div class="h-7 w-full mt-space-md pt-1">
+<svg class="w-full h-full text-secondary overflow-visible" fill="none" viewBox="0 0 100 24">
+<path d="M0 19 L16 15 L32 16 L48 10 L64 12 L80 7 L100 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M0 19 L16 15 L32 16 L48 10 L64 12 L80 7 L100 4 L100 24 L0 24 Z" fill="currentColor" fill-opacity="0.15"></path>
+</svg>
+</div>
+</div>
+<!-- KPI 6 -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow group">
+<div class="flex items-center justify-between gap-space-xs mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider font-semibold">Ticket promedio</span>
+<span class="w-8 h-8 rounded bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-headline-sm">shopping_cart</span>
+</span>
+</div>
+<div>
+<div class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">$68.20</div>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="inline-flex items-center gap-0.5 text-on-tertiary-container bg-surface-container-low px-1.5 py-0.5 rounded font-label-sm text-label-sm font-bold">
+              +32.9%
+            </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">vs $51.30 regular</span>
+</div>
+</div>
+<div class="h-7 w-full mt-space-md pt-1">
+<svg class="w-full h-full text-on-tertiary-container overflow-visible" fill="none" viewBox="0 0 100 24">
+<path d="M0 21 L16 18 L32 13 L48 14 L64 8 L80 6 L100 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M0 21 L16 18 L32 13 L48 14 L64 8 L80 6 L100 2 L100 24 L0 24 Z" fill="currentColor" fill-opacity="0.12"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- SECCIÓN DE GRÁFICOS ANALÍTICOS (FILA PRINCIPAL: 2 COLS GRANDES) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- GRÁFICO 1: CLIENTES Y FRECUENCIA DE COMPRA (7 COLS) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-lg p-space-md lg:p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Clientes y frecuencia de compra</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Evolución de socios activos registrados vs visitas por semana (Ene - Oct 2024)</p>
+</div>
+<div class="flex items-center gap-space-md bg-surface-container-low px-space-sm py-1 rounded shrink-0">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-primary">
+<span class="w-3 h-1.5 rounded-full bg-primary"></span>
+<span class="">Socios (k)</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-secondary">
+<span class="w-3 h-1.5 rounded-full bg-secondary-container"></span>
+<span class="">Frecuencia (visitas)</span>
+</div>
+</div>
+</div>
+<!-- SVG CHART INTERACTIVO: ÁREA + LÍNEA DE FRECUENCIA -->
+<div class="relative w-full h-64 my-space-xs">
+<svg class="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 700 220">
+<!-- Grid horizontal sutil -->
+<line stroke="#eff4ff" stroke-width="1.5" x1="0" x2="700" y1="30" y2="30"></line>
+<line stroke="#eff4ff" stroke-width="1.5" x1="0" x2="700" y1="80" y2="80"></line>
+<line stroke="#eff4ff" stroke-width="1.5" x1="0" x2="700" y1="130" y2="130"></line>
+<line stroke="#eff4ff" stroke-width="1.5" x1="0" x2="700" y1="180" y2="180"></line>
+<!-- Área Socios -->
+<defs>
+<linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#0b2559" stop-opacity="0.32"></stop>
+<stop offset="100%" stop-color="#0b2559" stop-opacity="0.0"></stop>
+</linearGradient>
+</defs>
+<path d="M 30 170 Q 100 160 170 145 T 310 120 T 450 85 T 590 55 T 670 38 L 670 190 L 30 190 Z" fill="url(#areaGradient)"></path>
+<path d="M 30 170 Q 100 160 170 145 T 310 120 T 450 85 T 590 55 T 670 38" fill="none" stroke="#001137" stroke-linecap="round" stroke-width="3"></path>
+<!-- Línea Frecuencia (Amarillo / Dorado) -->
+<path d="M 30 140 Q 100 135 170 130 T 310 105 T 450 90 T 590 65 T 670 48" fill="none" stroke="#febf23" stroke-dasharray="4 4" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Nodos clave de datos -->
+<circle cx="30" cy="170" fill="#001137" r="4"></circle>
+<circle cx="170" cy="145" fill="#001137" r="4"></circle>
+<circle cx="310" cy="120" fill="#001137" r="4"></circle>
+<circle cx="450" cy="85" fill="#001137" r="4"></circle>
+<circle cx="590" cy="55" fill="#001137" r="4"></circle>
+<circle cx="670" cy="38" fill="#001137" r="5"></circle>
+<!-- Tooltip estático en último nodo -->
+<g transform="translate(580, 5)">
+<rect fill="#001137" height="30" rx="4" width="95"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="47" y="19">Oct: 24.1k / 2.8v</text>
+</g>
+</svg>
+<!-- Eje X etiquetas -->
+<div class="flex justify-between text-label-sm font-label-sm text-outline pt-2 px-3">
+<span class="">Ene</span><span class="">Feb</span><span class="">Mar</span><span class="">Abr</span><span class="">May</span><span class="">Jun</span><span class="">Jul</span><span class="">Ago</span><span class="">Sep</span><span class="text-primary font-bold">Oct</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-space-sm pt-space-md mt-space-sm bg-surface-container-low p-space-sm rounded">
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase">Retención 90 días</div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold">81.2%</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase">Nuevos socios / día</div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold">+142</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase">Rotación de puntos</div>
+<div class="font-headline-sm text-headline-sm text-secondary font-bold">38 días prom.</div>
+</div>
+</div>
+</div>
+<!-- GRÁFICO 2: PUNTOS OTORGADOS VS PUNTOS CANJEADOS (5 COLS) -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-lg p-space-md lg:p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between gap-space-sm mb-space-sm">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Puntos: Otorgados vs Canjeados</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Carga acumulada y liquidación neta mensual (miles)</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded bg-primary"></span>
+<span class="text-label-sm font-label-sm text-outline">Otorgados</span>
+<span class="w-2.5 h-2.5 rounded bg-secondary-container ml-1"></span>
+<span class="text-label-sm font-label-sm text-outline">Canjeados</span>
+</div>
+</div>
+<!-- BARRAS COMPARATIVAS POR MES -->
+<div class="space-y-space-sm my-auto py-space-xs">
+<!-- Mayo -->
+<div class="space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="font-bold text-primary">Mayo</span>
+<span class="text-outline">Otorgados: 890k pts | Canjeados: 240k pts (26.9%)</span>
+</div>
+<div class="flex h-3.5 w-full bg-surface-container-low rounded-sm overflow-hidden gap-0.5">
+<div class="bg-primary rounded-l-sm" style="width: 72%;"></div>
+<div class="bg-secondary-container rounded-r-sm" style="width: 28%;"></div>
+</div>
+</div>
+<!-- Junio -->
+<div class="space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="font-bold text-primary">Junio</span>
+<span class="text-outline">Otorgados: 940k pts | Canjeados: 275k pts (29.2%)</span>
+</div>
+<div class="flex h-3.5 w-full bg-surface-container-low rounded-sm overflow-hidden gap-0.5">
+<div class="bg-primary rounded-l-sm" style="width: 70%;"></div>
+<div class="bg-secondary-container rounded-r-sm" style="width: 30%;"></div>
+</div>
+</div>
+<!-- Julio -->
+<div class="space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="font-bold text-primary">Julio</span>
+<span class="text-outline">Otorgados: 1,020k pts | Canjeados: 310k pts (30.3%)</span>
+</div>
+<div class="flex h-3.5 w-full bg-surface-container-low rounded-sm overflow-hidden gap-0.5">
+<div class="bg-primary rounded-l-sm" style="width: 68%;"></div>
+<div class="bg-secondary-container rounded-r-sm" style="width: 32%;"></div>
+</div>
+</div>
+<!-- Agosto -->
+<div class="space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="font-bold text-primary">Agosto</span>
+<span class="text-outline">Otorgados: 1,110k pts | Canjeados: 340k pts (30.6%)</span>
+</div>
+<div class="flex h-3.5 w-full bg-surface-container-low rounded-sm overflow-hidden gap-0.5">
+<div class="bg-primary rounded-l-sm" style="width: 67%;"></div>
+<div class="bg-secondary-container rounded-r-sm" style="width: 33%;"></div>
+</div>
+</div>
+<!-- Septiembre -->
+<div class="space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="font-bold text-primary">Septiembre</span>
+<span class="text-outline">Otorgados: 1,180k pts | Canjeados: 362k pts (30.6%)</span>
+</div>
+<div class="flex h-3.5 w-full bg-surface-container-low rounded-sm overflow-hidden gap-0.5">
+<div class="bg-primary rounded-l-sm" style="width: 66%;"></div>
+<div class="bg-secondary-container rounded-r-sm" style="width: 34%;"></div>
+</div>
+</div>
+<!-- Octubre Activo -->
+<div class="space-y-1 p-2 bg-surface-container-low rounded">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="font-bold text-primary flex items-center gap-1">
+                Octubre (En curso)
+                <span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+</span>
+<span class="text-primary font-bold">1,245k pts / 385k pts (30.9%)</span>
+</div>
+<div class="flex h-4 w-full bg-surface-container-highest rounded-sm overflow-hidden gap-0.5">
+<div class="bg-primary rounded-l-sm" style="width: 65%;"></div>
+<div class="bg-secondary-container rounded-r-sm" style="width: 35%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant pt-space-xs">
+<span class="">Pasivo por redimir en reserva: <strong class="text-primary">$86.0k MXN</strong></span>
+<span class="text-on-tertiary-container font-label-sm text-label-sm font-bold">Sano (Rango TI &lt; 35%)</span>
+</div>
+</div>
+</div>
+<!-- SECCIÓN DE ACTIVIDAD POR SUCURSAL Y TABLA OPERATIVA -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md lg:p-space-lg shadow-sm space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Rendimiento por sucursal Yepas</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Top unidades con mayor conversión de socios sobre el volumen total de tickets</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<input class="h-8 pl-8 pr-space-sm bg-surface-container-low text-on-surface placeholder:text-outline text-body-sm font-body-sm rounded focus:outline-none" id="search-sucursal" placeholder="Filtrar sucursal..." type="text">
+<span class="material-symbols-outlined absolute left-2 top-1.5 text-label-lg text-outline pointer-events-none">search</span>
+</div>
+<span class="px-2.5 py-1 bg-surface-container-high text-primary font-label-sm text-label-sm rounded font-semibold">96 Sucursales activas</span>
+</div>
+</div>
+<!-- TABLA CON BARRAS HORIZONTALES INTEGRADAS -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-outline font-label-sm text-label-sm uppercase">
+<th class="py-2.5 px-3 rounded-l">Sucursal</th>
+<th class="py-2.5 px-3">Zona</th>
+<th class="py-2.5 px-3">Tickets con lealtad</th>
+<th class="py-2.5 px-3">Penetración (% tickets)</th>
+<th class="py-2.5 px-3">Puntos emitidos</th>
+<th class="py-2.5 px-3">Puntos redimidos</th>
+<th class="py-2.5 px-3 text-right rounded-r">Estado POS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm">
+<!-- Fila 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-3 font-label-md text-label-md text-primary font-bold flex items-center gap-2">
+<span class="w-6 h-6 rounded bg-primary-container text-on-primary flex items-center justify-center text-label-sm">#1</span>
+                Sucursal Díaz Mirón (Veracruz Centro)
+              </td>
+<td class="py-3 px-3 text-on-surface-variant">Zona Conurbada 1</td>
+<td class="py-3 px-3 font-semibold text-primary">18,420</td>
+<td class="py-3 px-3 min-w-[200px]">
+<div class="flex items-center gap-2">
+<div class="w-32 bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 54%;"></div>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary">54.0%</span>
+</div>
+</td>
+<td class="py-3 px-3 font-semibold text-primary">248,300 pts</td>
+<td class="py-3 px-3 text-secondary font-semibold">82,150 pts</td>
+<td class="py-3 px-3 text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Sincronizado
+                </span>
+</td>
+</tr>
+<!-- Fila 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-3 font-label-md text-label-md text-primary font-bold flex items-center gap-2">
+<span class="w-6 h-6 rounded bg-surface-container-high text-primary flex items-center justify-center text-label-sm">#2</span>
+                Sucursal Boca del Río (Costera)
+              </td>
+<td class="py-3 px-3 text-on-surface-variant">Boca del Río Norte</td>
+<td class="py-3 px-3 font-semibold text-primary">16,190</td>
+<td class="py-3 px-3 min-w-[200px]">
+<div class="flex items-center gap-2">
+<div class="w-32 bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 49%;"></div>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary">49.2%</span>
+</div>
+</td>
+<td class="py-3 px-3 font-semibold text-primary">212,450 pts</td>
+<td class="py-3 px-3 text-secondary font-semibold">74,200 pts</td>
+<td class="py-3 px-3 text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Sincronizado
+                </span>
+</td>
+</tr>
+<!-- Fila 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-3 font-label-md text-label-md text-primary font-bold flex items-center gap-2">
+<span class="w-6 h-6 rounded bg-surface-container-high text-primary flex items-center justify-center text-label-sm">#3</span>
+                Sucursal Puerto Centro (Independencia)
+              </td>
+<td class="py-3 px-3 text-on-surface-variant">Puerto Histórico</td>
+<td class="py-3 px-3 font-semibold text-primary">14,880</td>
+<td class="py-3 px-3 min-w-[200px]">
+<div class="flex items-center gap-2">
+<div class="w-32 bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 44%;"></div>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary">44.1%</span>
+</div>
+</td>
+<td class="py-3 px-3 font-semibold text-primary">195,120 pts</td>
+<td class="py-3 px-3 text-secondary font-semibold">61,400 pts</td>
+<td class="py-3 px-3 text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Sincronizado
+                </span>
+</td>
+</tr>
+<!-- Fila 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-3 font-label-md text-label-md text-primary font-bold flex items-center gap-2">
+<span class="w-6 h-6 rounded bg-surface-container-high text-primary flex items-center justify-center text-label-sm">#4</span>
+                Sucursal Xalapa Enríquez (Las Ánimas)
+              </td>
+<td class="py-3 px-3 text-on-surface-variant">Región Capital</td>
+<td class="py-3 px-3 font-semibold text-primary">13,420</td>
+<td class="py-3 px-3 min-w-[200px]">
+<div class="flex items-center gap-2">
+<div class="w-32 bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 42%;"></div>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary">42.0%</span>
+</div>
+</td>
+<td class="py-3 px-3 font-semibold text-primary">178,900 pts</td>
+<td class="py-3 px-3 text-secondary font-semibold">53,100 pts</td>
+<td class="py-3 px-3 text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Sincronizado
+                </span>
+</td>
+</tr>
+<!-- Fila 5 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3 px-3 font-label-md text-label-md text-primary font-bold flex items-center gap-2">
+<span class="w-6 h-6 rounded bg-surface-container-high text-primary flex items-center justify-center text-label-sm">#5</span>
+                Sucursal Ruiz Cortines (Plateros)
+              </td>
+<td class="py-3 px-3 text-on-surface-variant">Boca del Río Poniente</td>
+<td class="py-3 px-3 font-semibold text-primary">11,940</td>
+<td class="py-3 px-3 min-w-[200px]">
+<div class="flex items-center gap-2">
+<div class="w-32 bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 39%;"></div>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary">39.4%</span>
+</div>
+</td>
+<td class="py-3 px-3 font-semibold text-primary">152,700 pts</td>
+<td class="py-3 px-3 text-secondary font-semibold">46,230 pts</td>
+<td class="py-3 px-3 text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-low text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Sincronizado
+                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- PIE DE TABLA CON ACCESO DIRECTO -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs font-body-sm text-body-sm text-outline">
+<div class="">Mostrando las 5 sucursales líderes de 96 puntos de cobro en red.</div>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md flex items-center gap-1" type="button">
+<span class="">Ver desglose completo de las 96 sucursales</span>
+<span class="material-symbols-outlined text-headline-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Micro-interacción: Búsqueda dinámica en tabla de sucursales
+  document.getElementById('search-sucursal')?.addEventListener('input', function(e) {
+    const val = e.target.value.toLowerCase();
+    const rows = document.querySelectorAll('tbody tr');
+    rows.forEach(row => {
+      const text = row.textContent.toLowerCase();
+      row.style.display = text.includes(val) ? '' : 'none';
+    });
+  });
+
+  // Micro-interacción: Feedback de botones de acción rápida
+  document.getElementById('btn-regla')?.addEventListener('click', () => {
+    alert('Abriendo configuración de Reglas de Acumulación (Puntos por $10 MXN)');
+  });
+  document.getElementById('btn-promocion')?.addEventListener('click', () => {
+    alert('Iniciando asistente de Nueva Promoción Comercial Yepas');
+  });
+  document.getElementById('btn-exportar')?.addEventListener('click', () => {
+    alert('Generando archivo XLS de auditoría comercial y puntos POS');
+  });
+</script></main></div>
+
+
+
+</body></html>
