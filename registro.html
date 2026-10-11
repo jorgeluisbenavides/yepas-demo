@@ -48,9 +48,9 @@
     }
   </style>
   <script>
-    function toIndex() {
+    function toProfile() {
       setTimeout(() => {
-        window.location='index.html'
+        window.location='user.html'
       }, 5000);
     }
   </script>
@@ -63,9 +63,9 @@
   <header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
     <div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
       <div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="inicio"
-          href="#"><img alt="Yepas" class="h-10 w-auto object-contain"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtT31BUafLF1LGbiAqI3pmA9RbL6eMi1ALDcld2ef40-YDBI0Au7BPTCbbgN1HIy7w_PRzV3OajQj5ZIWz4BMnyihjU3GlevNNBLVLWJCSM-_DVBYj0pIye0j93d-vw-9gdEj0Y8Hi4wgcMUmu6IvLSvgbIlbjU8I-qYjo_cqQ-J9ny_4eaE1JrWkZYwxi5Czn8Mk9R2jmD-O_dpjIjUWC2exEaTmRFlvmgOeCv2hYhf303a0el5mHHNZhCdfhaf5OklE" /><span
-            class="font-headline-sm text-headline-sm text-primary tracking-tight hidden sm:inline">Recompensas</span></a>
+          href="index.html"><img alt="Yepas" class="h-10 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtT31BUafLF1LGbiAqI3pmA9RbL6eMi1ALDcld2ef40-YDBI0Au7BPTCbbgN1HIy7w_PRzV3OajQj5ZIWz4BMnyihjU3GlevNNBLVLWJCSM-_DVBYj0pIye0j93d-vw-9gdEj0Y8Hi4wgcMUmu6IvLSvgbIlbjU8I-qYjo_cqQ-J9ny_4eaE1JrWkZYwxi5Czn8Mk9R2jmD-O_dpjIjUWC2exEaTmRFlvmgOeCv2hYhf303a0el5mHHNZhCdfhaf5OklE" />
+            <span class="font-headline-sm text-headline-sm text-primary tracking-tight hidden sm:inline">Recompensas</span></a>
       </div>
       <div class="flex items-center gap-space-md">
         <a
@@ -229,8 +229,8 @@
                 <p class="font-body-md text-body-md text-on-surface-variant mt-1 mb-8">
                   Completa tus datos para empezar a acumular puntos en todas las tiendas Yepas de México.
                 </p>
-                <form class="space-y-6" id="registro-form" action="index.html"
-                  onsubmit="event.preventDefault(); document.getElementById('success-banner').classList.remove('hidden'); toIndex();">
+                <form class="space-y-6" id="registro-form" action="user.html"
+                  onsubmit="event.preventDefault(); document.getElementById('success-banner').classList.remove('hidden'); toProfile();">
                   <div>
                     <label class="block font-label-md text-label-md text-on-surface mb-2" for="nombre">
                       Nombre completo <span class="text-promo-coral">*</span>
@@ -286,7 +286,7 @@
                         </span>
                         <input
                           class="w-full h-12 pl-12 pr-4 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all"
-                          id="fecha-nacimiento" required="" type="date" />
+                          id="fecha-nacimiento" value="1988-03-14" required="" type="date" />
                       </div>
                       <p class="font-body-sm text-body-sm text-secondary font-semibold mt-1.5 ml-1">
                         ¡Te regalaremos sorpresas y puntos en tu cumpleaños!

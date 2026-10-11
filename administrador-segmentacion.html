@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="es" style="">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="web_dashboard" name="shell-type">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { "darkMode": "class", "theme": { "extend": { "colors": { "tertiary-fixed": "#85f8c4", "on-primary-fixed": "#001848", "surface-dim": "#cbdbf5", "surface-container-high": "#dce9ff", "on-primary": "#ffffff", "on-secondary-container": "#6d4f00", "surface-bright": "#f8f9ff", "inverse-surface": "#213145", "on-surface-variant": "#44464f", "surface-container-low": "#eff4ff", "on-error-container": "#93000a", "outline": "#757780", "on-tertiary-container": "#23a274", "on-secondary": "#ffffff", "on-tertiary-fixed": "#002114", "on-primary-container": "#798ec8", "primary-fixed-dim": "#b2c5ff", "primary-container": "#0b2559", "tertiary-container": "#002f1e", "secondary-fixed": "#ffdea2", "background": "#f8f9ff", "surface": "#f8f9ff", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#2f457a", "on-error": "#ffffff", "surface-variant": "#d3e4fe", "inverse-on-surface": "#eaf1ff", "primary": "#001137", "secondary-fixed-dim": "#fbbc20", "surface-container-highest": "#d3e4fe", "outline-variant": "#c5c6d1", "surface-container-lowest": "#ffffff", "surface-container": "#e5eeff", "secondary-container": "#febf23", "inverse-primary": "#b2c5ff", "on-background": "#0b1c30", "secondary": "#7a5900", "error": "#ba1a1a", "surface-tint": "#485d93", "on-secondary-fixed-variant": "#5c4200", "error-container": "#ffdad6", "on-surface": "#0b1c30", "on-tertiary-fixed-variant": "#005137", "primary-fixed": "#dae2ff", "tertiary": "#00180d", "tertiary-fixed-dim": "#68dba9", "on-secondary-fixed": "#261900" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "1.5rem", "space-xl": "1.75rem", "space-md": "0.875rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-lg": "1.25rem", "gutter": "1rem" }, "fontFamily": { "label-md": ["Inter"], "headline-xl-mobile": ["Inter"], "label-sm": ["Inter"], "headline-md": ["Inter"], "headline-xl": ["Inter"], "label-lg": ["Inter"], "headline-sm": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"], "body-lg": ["Inter"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } }</script>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased">
+  <aside
+    class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto">
+    <div class="flex flex-col">
+      <div class="px-space-lg pt-space-lg pb-space-md flex items-center gap-space-sm">
+        <div
+          class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary font-headline-md font-bold text-headline-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+          <span class="material-symbols-outlined text-secondary-fixed text-headline-md">loyalty</span></div>
+        <div class="flex flex-col min-w-0"><span
+            class="font-headline-sm text-headline-sm text-primary font-bold truncate tracking-tight">Yepas
+            Loyalty</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate uppercase">Suite
+            Comercial TI</span></div>
+      </div>
+      <div class="px-space-lg py-space-xs mb-space-sm">
+        <div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-space-xs rounded"><span
+            class="material-symbols-outlined text-label-md text-secondary">verified_user</span><span
+            class="font-label-sm text-label-sm text-secondary truncate font-semibold">Marketing &amp; Comercial</span>
+        </div>
+      </div>
+      <nav class="px-space-sm space-y-space-md pb-space-lg"
+        data-active-classes="bg-primary-container text-on-primary font-label-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div class="space-y-space-xs">
+          <div class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Principal</div><a
+            class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="dashboard" href="administrador.html"><span
+              class="material-symbols-outlined text-headline-sm">pie_chart</span><span
+              class="truncate">Dashboard</span></a>
+        </div>
+        <div class="space-y-space-xs">
+          <div class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Fidelización</div>
+          <a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="reglas-de-puntos" href="administrador-puntos.html"><span
+              class="material-symbols-outlined text-headline-sm">tune</span><span class="truncate">Reglas de
+              puntos</span></a><a
+            class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="promociones" href="#"><span class="material-symbols-outlined text-headline-sm">redeem</span><span
+              class="truncate">Promociones</span></a><a
+            class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="canjes" href="#"><span
+              class="material-symbols-outlined text-headline-sm">confirmation_number</span><span
+              class="truncate">Canjes</span></a><a
+            class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="movimientos" href="#"><span
+              class="material-symbols-outlined text-headline-sm">swap_horiz</span><span
+              class="truncate">Movimientos</span></a>
+        </div>
+        <div class="space-y-space-xs">
+          <div class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Estrategia</div><a
+            class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="clientes" href="#"><span class="material-symbols-outlined text-headline-sm">group</span><span
+              class="truncate">Clientes</span></a><a
+            class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="segmentacion" href="#"><span
+              class="material-symbols-outlined text-headline-sm">filter_alt</span><span
+              class="truncate">Segmentación</span></a><a
+            class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="reportes" href="#"><span class="material-symbols-outlined text-headline-sm">bar_chart</span><span
+              class="truncate">Reportes</span></a>
+        </div>
+        <div class="space-y-space-xs">
+          <div class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Sistema</div><a
+            class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="sucursales" href="#"><span class="material-symbols-outlined text-headline-sm">store</span><span
+              class="truncate">Sucursales</span></a><a
+            class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="auditoria-historial" href="#"><span
+              class="material-symbols-outlined text-headline-sm">history</span><span class="truncate">Auditoría /
+              Historial</span></a><a
+            class="flex items-center gap-space-sm px-space-sm py-space-xs rounded text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            data-path="configuracion" href="#"><span
+              class="material-symbols-outlined text-headline-sm">settings</span><span
+              class="truncate">Configuración</span></a>
+        </div>
+      </nav>
+    </div>
+    <div class="p-space-md m-space-sm bg-surface-container-low rounded-lg space-y-space-xs">
+      <div class="flex items-center gap-space-xs"><span
+          class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span><span
+          class="font-label-sm text-label-sm text-primary font-bold">Producción</span><span
+          class="text-outline text-label-sm font-label-sm">•</span><span
+          class="font-label-sm text-label-sm text-on-surface-variant">96 Sucursales</span></div>
+      <p class="font-body-sm text-body-sm text-outline leading-tight">Control Comercial verificado por TI</p>
+    </div>
+  </aside>
+  <div class="pl-64">
+    <header
+      class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between gap-space-md">
+      <div class="flex items-center gap-space-md min-w-0 flex-1">
+        <div class="relative flex-1 max-w-md"><span
+            class="material-symbols-outlined absolute left-3 top-2.5 text-headline-sm text-outline pointer-events-none">search</span><input
+            class="w-full h-9 pl-9 pr-space-md bg-surface-container-lowest text-on-surface placeholder:text-outline text-body-sm font-body-sm rounded shadow-[0_1px_8px_rgba(0,0,0,0.04)] focus:outline-none focus:bg-surface-container-low"
+            placeholder="Buscar por cliente, regla, promoción, sucursal..." type="search"></div>
+        <div class="hidden xl:flex items-center gap-space-xs bg-surface-container-high px-space-md py-1.5 rounded-full">
+          <span class="material-symbols-outlined text-headline-sm text-on-surface">shield</span><span
+            class="font-label-sm text-label-sm text-on-surface font-semibold">Seguridad TI: Gobernanza Activa (Modo
+            Marketing)</span></div>
+      </div>
+      <div class="flex items-center gap-space-md shrink-0"><button
+          class="relative p-1.5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"
+          type="button"><span class="material-symbols-outlined text-headline-sm">notifications</span><span
+            class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary-container"></span></button><button
+          class="p-1.5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"
+          type="button"><span class="material-symbols-outlined text-headline-sm">help_outline</span></button>
+        <div class="flex items-center gap-space-sm pl-space-sm">
+          <div class="text-right hidden sm:block">
+            <div class="font-label-md text-label-md text-primary leading-tight font-semibold">Marketing Yepas</div>
+            <div class="font-label-sm text-label-sm text-outline leading-tight">Adm. Comercial</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-16 bg-surface min-h-screen">
+      <div class="flex flex-col w-full">
+        <!-- Dynamic Notification / Governance Banner -->
+        <div class="px-margin pt-space-md">
+          <div
+            class="flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-high px-space-md py-space-sm rounded-lg shadow-sm">
+            <div class="flex items-center gap-space-sm min-w-0">
+              <span class="material-symbols-outlined text-headline-sm text-primary shrink-0"
+                style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+              <p class="font-body-sm text-body-sm text-on-surface truncate">
+                <span
+                  class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold mr-1">Cumplimiento
+                  RGPD &amp; LFPDPPP:</span>
+                Segmentación algorítmica anonimizada basada en identificadores 'hash'. Los datos sensibles están
+                protegidos por el nodo central de TI.
+              </p>
+            </div>
+            <div class="flex items-center gap-space-xs text-on-surface-variant shrink-0">
+              <span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+              <span class="font-label-sm text-label-sm font-semibold">Motor ML V4.2 Activo</span>
+            </div>
+          </div>
+        </div>
+        <!-- Header Section with Global Metrics and Primary Action -->
+        <section class="px-margin py-space-lg flex flex-col xl:flex-row xl:items-end justify-between gap-space-md">
+          <div class="max-w-3xl space-y-space-xs">
+            <div
+              class="flex items-center gap-space-xs text-secondary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+              <span class="material-symbols-outlined text-headline-sm">hub</span>
+              <span class="">Estrategia de Fidelización Omni-Canal</span>
+            </div>
+            <h1 class="font-headline-xl text-headline-xl text-primary tracking-tight">Segmentación de Clientes y
+              Audiencias</h1>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+              Crea clusters dinámicos para promociones dirigidas y fidelización personalizada sin tocar datos personales
+              sensibles.
+            </p>
+          </div>
+          <!-- Actions & Global Cohort Counter Card -->
+          <div class="flex flex-wrap sm:flex-nowrap items-stretch gap-space-md">
+            <div
+              class="bg-surface-container-lowest px-space-md py-space-sm rounded-lg shadow-sm flex items-center gap-space-md">
+              <div
+                class="w-10 h-10 rounded bg-surface-container-low flex items-center justify-center text-primary shrink-0">
+                <span class="material-symbols-outlined text-headline-md">groups_3</span>
+              </div>
+              <div>
+                <div class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Universo de Socios</div>
+                <div class="flex items-baseline gap-space-xs">
+                  <span class="font-headline-lg text-headline-lg text-primary font-bold">32,450</span>
+                  <span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold">en vivo</span>
+                </div>
+              </div>
+            </div>
+            <button
+              class="bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg px-space-lg py-space-sm rounded flex items-center justify-center gap-space-xs shadow-md hover:shadow-lg transition-all shrink-0"
+              id="btn-open-builder" type="button">
+              <span class="material-symbols-outlined text-headline-sm">add_circle</span>
+              <span class="">+ Crear nuevo segmento</span>
+            </button>
+          </div>
+        </section>
+        <!-- Predefined & Strategic Segments (4 Grid Cards) -->
+        <section class="px-margin pb-space-xl">
+          <div class="flex items-center justify-between mb-space-md">
+            <div class="flex items-center gap-space-xs">
+              <span class="font-headline-sm text-headline-sm text-primary">Segmentos Estratégicos Predefinidos</span>
+              <span
+                class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-space-xs rounded font-bold">4
+                Grupos</span>
+            </div>
+            <div class="flex items-center gap-space-sm text-on-surface-variant text-label-sm font-label-sm">
+              <span class="material-symbols-outlined text-headline-sm">tune</span>
+              <span class="">Actualizado hace 4 min</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+            <!-- Card 1: Clientes Frecuentes -->
+            <article
+              class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow p-space-lg flex flex-col justify-between relative overflow-hidden group">
+              <div class="absolute top-0 left-0 right-0 h-1 bg-on-tertiary-container"></div>
+              <div class="space-y-space-md">
+                <div class="flex items-start justify-between">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-on-tertiary-container">
+                    <span class="material-symbols-outlined text-headline-md">repeat</span>
+                  </div>
+                  <span
+                    class="bg-surface-container text-primary font-label-sm text-label-sm px-space-sm py-0.5 rounded-full font-bold">
+                    29.0% del total
+                  </span>
+                </div>
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm text-primary mb-space-xs">Clientes frecuentes</h3>
+                  <div class="flex items-baseline gap-space-xs">
+                    <span class="font-headline-xl text-headline-xl text-primary font-bold">9,420</span>
+                    <span class="font-label-sm text-label-sm text-outline">socios activos</span>
+                  </div>
+                </div>
+                <!-- Criterio -->
+                <div class="bg-surface-container-low p-space-sm rounded space-y-1">
+                  <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Criterio
+                    Base</span>
+                  <p class="font-body-sm text-body-sm text-on-surface font-medium leading-tight">
+                    &gt; 4 visitas semanales <span class="text-outline">|</span> Ticket prom. $84.50
+                  </p>
+                </div>
+                <!-- Campañas asociadas -->
+                <div>
+                  <span
+                    class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-space-xs">Campañas
+                    Activas (2)</span>
+                  <div class="flex flex-wrap gap-space-xs">
+                    <span
+                      class="bg-surface-container-high text-primary font-label-sm text-label-sm px-space-xs py-0.5 rounded truncate max-w-full">
+                      ⚡ Puntos Dobles Octubre
+                    </span>
+                    <span
+                      class="bg-surface-container-high text-primary font-label-sm text-label-sm px-space-xs py-0.5 rounded truncate max-w-full">
+                      ☕ Descuento Café Matutino
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-space-lg mt-space-md flex flex-col gap-space-xs">
+                <button
+                  class="w-full bg-secondary-container hover:bg-secondary-fixed text-on-primary font-label-md text-label-md py-space-xs px-space-sm rounded font-semibold text-center transition-colors"
+                  type="button">
+                  Crear campaña para este segmento
+                </button>
+                <button
+                  class="w-full bg-surface-container-low hover:bg-surface-container-high text-primary font-label-sm text-label-sm py-space-xs px-space-sm rounded transition-colors text-center"
+                  type="button">
+                  Ver miembros (Anonimizado)
+                </button>
+              </div>
+            </article>
+            <!-- Card 2: Clientes de Alto Valor -->
+            <article
+              class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow p-space-lg flex flex-col justify-between relative overflow-hidden group">
+              <div class="absolute top-0 left-0 right-0 h-1 bg-secondary-container"></div>
+              <div class="space-y-space-md">
+                <div class="flex items-start justify-between">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+                    <span class="material-symbols-outlined text-headline-md">diamond</span>
+                  </div>
+                  <span
+                    class="bg-surface-container text-primary font-label-sm text-label-sm px-space-sm py-0.5 rounded-full font-bold">
+                    12.9% del total
+                  </span>
+                </div>
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm text-primary mb-space-xs">Clientes de alto valor</h3>
+                  <div class="flex items-baseline gap-space-xs">
+                    <span class="font-headline-xl text-headline-xl text-primary font-bold">4,180</span>
+                    <span class="font-label-sm text-label-sm text-outline">socios premium</span>
+                  </div>
+                </div>
+                <!-- Criterio -->
+                <div class="bg-surface-container-low p-space-sm rounded space-y-1">
+                  <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Criterio
+                    Base</span>
+                  <p class="font-body-sm text-body-sm text-on-surface font-medium leading-tight">
+                    Gasto mensual &gt; $1,200 MXN <span class="text-outline">|</span> Ticket $142.00
+                  </p>
+                </div>
+                <!-- Campañas asociadas -->
+                <div>
+                  <span
+                    class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-space-xs">Campañas
+                    Activas (2)</span>
+                  <div class="flex flex-wrap gap-space-xs">
+                    <span
+                      class="bg-surface-container-high text-primary font-label-sm text-label-sm px-space-xs py-0.5 rounded truncate max-w-full">
+                      ⭐ Preventas exclusivas
+                    </span>
+                    <span
+                      class="bg-surface-container-high text-primary font-label-sm text-label-sm px-space-xs py-0.5 rounded truncate max-w-full">
+                      👑 Multiplicador VIP x3
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-space-lg mt-space-md flex flex-col gap-space-xs">
+                <button
+                  class="w-full bg-secondary-container hover:bg-secondary-fixed text-on-primary font-label-md text-label-md py-space-xs px-space-sm rounded font-semibold text-center transition-colors"
+                  type="button">
+                  Crear campaña para este segmento
+                </button>
+                <button
+                  class="w-full bg-surface-container-low hover:bg-surface-container-high text-primary font-label-sm text-label-sm py-space-xs px-space-sm rounded transition-colors text-center"
+                  type="button">
+                  Ver miembros (Anonimizado)
+                </button>
+              </div>
+            </article>
+            <!-- Card 3: Clientes Inactivos -->
+            <article
+              class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow p-space-lg flex flex-col justify-between relative overflow-hidden group">
+              <div class="absolute top-0 left-0 right-0 h-1 bg-outline"></div>
+              <div class="space-y-space-md">
+                <div class="flex items-start justify-between">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-outline">
+                    <span class="material-symbols-outlined text-headline-md">snooze</span>
+                  </div>
+                  <span
+                    class="bg-surface-container text-primary font-label-sm text-label-sm px-space-sm py-0.5 rounded-full font-bold">
+                    19.2% del total
+                  </span>
+                </div>
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm text-primary mb-space-xs">Clientes inactivos</h3>
+                  <div class="flex items-baseline gap-space-xs">
+                    <span class="font-headline-xl text-headline-xl text-primary font-bold">6,250</span>
+                    <span class="font-label-sm text-label-sm text-outline">riesgo de fuga</span>
+                  </div>
+                </div>
+                <!-- Criterio -->
+                <div class="bg-surface-container-low p-space-sm rounded space-y-1">
+                  <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Criterio
+                    Base</span>
+                  <p class="font-body-sm text-body-sm text-on-surface font-medium leading-tight">
+                    Sin compras en los últimos 45 días continuos
+                  </p>
+                </div>
+                <!-- Campañas asociadas -->
+                <div>
+                  <span
+                    class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-space-xs">Campañas
+                    Activas (1)</span>
+                  <div class="flex flex-wrap gap-space-xs">
+                    <span
+                      class="bg-error-container text-on-error-container font-label-sm text-label-sm px-space-xs py-0.5 rounded truncate max-w-full font-medium">
+                      🎁 Reactivación +100 pts bienvenida
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-space-lg mt-space-md flex flex-col gap-space-xs">
+                <button
+                  class="w-full bg-secondary-container hover:bg-secondary-fixed text-on-primary font-label-md text-label-md py-space-xs px-space-sm rounded font-semibold text-center transition-colors"
+                  type="button">
+                  Crear campaña para este segmento
+                </button>
+                <button
+                  class="w-full bg-surface-container-low hover:bg-surface-container-high text-primary font-label-sm text-label-sm py-space-xs px-space-sm rounded transition-colors text-center"
+                  type="button">
+                  Ver miembros (Anonimizado)
+                </button>
+              </div>
+            </article>
+            <!-- Card 4: Clientes Nuevos -->
+            <article
+              class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow p-space-lg flex flex-col justify-between relative overflow-hidden group">
+              <div class="absolute top-0 left-0 right-0 h-1 bg-primary"></div>
+              <div class="space-y-space-md">
+                <div class="flex items-start justify-between">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+                    <span class="material-symbols-outlined text-headline-md">person_add</span>
+                  </div>
+                  <span
+                    class="bg-surface-container text-primary font-label-sm text-label-sm px-space-sm py-0.5 rounded-full font-bold">
+                    11.8% del total
+                  </span>
+                </div>
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm text-primary mb-space-xs">Clientes nuevos</h3>
+                  <div class="flex items-baseline gap-space-xs">
+                    <span class="font-headline-xl text-headline-xl text-primary font-bold">3,840</span>
+                    <span class="font-label-sm text-label-sm text-outline">onboarding activo</span>
+                  </div>
+                </div>
+                <!-- Criterio -->
+                <div class="bg-surface-container-low p-space-sm rounded space-y-1">
+                  <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Criterio
+                    Base</span>
+                  <p class="font-body-sm text-body-sm text-on-surface font-medium leading-tight">
+                    Registro en últimos 30 días <span class="text-outline">|</span> 1 a 2 visitas
+                  </p>
+                </div>
+                <!-- Campañas asociadas -->
+                <div>
+                  <span
+                    class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-space-xs">Campañas
+                    Activas (1)</span>
+                  <div class="flex flex-wrap gap-space-xs">
+                    <span
+                      class="bg-surface-container-high text-primary font-label-sm text-label-sm px-space-xs py-0.5 rounded truncate max-w-full">
+                      🚀 Reto segunda compra
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-space-lg mt-space-md flex flex-col gap-space-xs">
+                <button
+                  class="w-full bg-secondary-container hover:bg-secondary-fixed text-on-primary font-label-md text-label-md py-space-xs px-space-sm rounded font-semibold text-center transition-colors"
+                  type="button">
+                  Crear campaña para este segmento
+                </button>
+                <button
+                  class="w-full bg-surface-container-low hover:bg-surface-container-high text-primary font-label-sm text-label-sm py-space-xs px-space-sm rounded transition-colors text-center"
+                  type="button">
+                  Ver miembros (Anonimizado)
+                </button>
+              </div>
+            </article>
+          </div>
+        </section>
+        <!-- Visual Segmentation Builder & Live Telemetry Panel -->
+        <section class="px-margin pb-space-xl" id="segment-builder-section">
+          <div class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg xl:p-space-xl">
+            <!-- Section Title & Meta Header -->
+            <div
+              class="flex flex-col lg:flex-row lg:items-center justify-between pb-space-md gap-space-sm bg-surface-container-low -mx-space-lg -mt-space-lg xl:-mx-space-xl xl:-mt-space-xl p-space-lg rounded-t-xl">
+              <div class="flex items-center gap-space-sm">
+                <div class="w-10 h-10 rounded bg-primary text-on-primary flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-headline-md">dataset</span>
+                </div>
+                <div>
+                  <div class="flex items-center gap-space-xs">
+                    <h2 class="font-headline-lg text-headline-lg text-primary">Constructor Visual de Segmentos</h2>
+                    <span
+                      class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-space-xs py-0.5 rounded font-bold uppercase">
+                      Marketing Drag &amp; Filter
+                    </span>
+                  </div>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Combina operadores lógicos multicriterio sin necesidad de consultar con ingeniería de datos.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center gap-space-sm">
+                <button
+                  class="text-on-surface-variant hover:text-primary font-label-sm text-label-sm px-space-sm py-1.5 rounded hover:bg-surface-container transition-colors flex items-center gap-1"
+                  id="btn-reset-filters" type="button">
+                  <span class="material-symbols-outlined text-headline-sm">restart_alt</span>
+                  <span class="">Limpiar condiciones</span>
+                </button>
+                <div class="h-4 w-px bg-outline-variant"></div>
+                <span class="font-label-sm text-label-sm text-outline">Modo: Reglas Booleanas Dinámicas</span>
+              </div>
+            </div>
+            <!-- Segment Name & Description Field -->
+            <div class="pt-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-md items-end">
+              <div class="lg:col-span-8 space-y-space-xs">
+                <label class="font-label-md text-label-md text-primary flex items-center justify-between"
+                  for="segment-name-input">
+                  <span class="">Nombre descriptivo del segmento</span>
+                  <span class="text-outline text-label-sm font-label-sm">Visible en el selector de promociones</span>
+                </label>
+                <div class="relative">
+                  <input
+                    class="w-full h-11 px-space-md bg-surface text-primary font-headline-sm text-headline-sm rounded shadow-inner focus:outline-none focus:bg-surface-container-low transition-colors"
+                    id="segment-name-input" type="text" value="Compradores Frecuentes de Bebidas y Snacks">
+                  <span class="material-symbols-outlined absolute right-3 top-3 text-secondary">label</span>
+                </div>
+              </div>
+              <div class="lg:col-span-4 flex items-center gap-space-xs bg-surface-container-low p-space-sm rounded">
+                <span class="material-symbols-outlined text-headline-md text-secondary shrink-0">info</span>
+                <p class="font-body-sm text-body-sm text-on-surface leading-tight">
+                  Se reclasifica automáticamente cada noche a las 02:00 hrs con el ticket promedio consolidado.
+                </p>
+              </div>
+            </div>
+            <!-- Main Layout: Left = Logic Filter Stacking / Right = Dynamic Audience Telemetry -->
+            <div class="mt-space-lg grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+              <!-- Left: Logic Rules Container (Stacked 'Y' / 'O') -->
+              <div class="xl:col-span-7 space-y-space-md">
+                <div class="flex items-center justify-between">
+                  <span class="font-label-md text-label-md uppercase tracking-wider text-outline">Condiciones Lógicas
+                    Apiladas</span>
+                  <div class="flex items-center gap-space-xs bg-surface-container-high px-space-sm py-1 rounded">
+                    <span class="font-label-sm text-label-sm text-primary font-bold">Operador Global:</span>
+                    <span class="font-label-sm text-label-sm text-on-primary bg-primary px-space-xs rounded font-bold">Y
+                      (Intersección Total)</span>
+                  </div>
+                </div>
+                <!-- Filter Item 1 -->
+                <div
+                  class="bg-surface p-space-md rounded-lg shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm hover:shadow transition-all group">
+                  <div class="flex items-center gap-space-sm min-w-0">
+                    <div
+                      class="w-8 h-8 rounded bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center shrink-0">
+                      1
+                    </div>
+                    <div>
+                      <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Frecuencia
+                        de Compra</span>
+                      <span class="font-label-lg text-label-lg text-primary font-semibold">Mayor a 3 veces por
+                        semana</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+                    <span
+                      class="bg-surface-container-high text-primary font-label-sm text-label-sm px-space-sm py-0.5 rounded font-medium">Historial
+                      60 días</span>
+                    <button
+                      class="text-outline hover:text-error p-1 rounded hover:bg-surface-container-lowest transition-colors"
+                      title="Modificar regla" type="button">
+                      <span class="material-symbols-outlined text-headline-sm">edit</span>
+                    </button>
+                  </div>
+                </div>
+                <!-- Operator Connector Badge -->
+                <div class="flex justify-center -my-2 relative z-10">
+                  <span
+                    class="bg-surface-container-high text-primary font-label-sm text-label-sm px-space-sm py-0.5 rounded-full font-bold shadow-sm">
+                    Y ADEMÁS
+                  </span>
+                </div>
+                <!-- Filter Item 2 -->
+                <div
+                  class="bg-surface p-space-md rounded-lg shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm hover:shadow transition-all group">
+                  <div class="flex items-center gap-space-sm min-w-0">
+                    <div
+                      class="w-8 h-8 rounded bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center shrink-0">
+                      2
+                    </div>
+                    <div>
+                      <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Ticket
+                        Promedio por Visita</span>
+                      <span class="font-label-lg text-label-lg text-primary font-semibold">Rango entre $60.00 y $150.00
+                        MXN</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+                    <span
+                      class="bg-surface-container-high text-primary font-label-sm text-label-sm px-space-sm py-0.5 rounded font-medium">Moneda
+                      Nacional</span>
+                    <button
+                      class="text-outline hover:text-error p-1 rounded hover:bg-surface-container-lowest transition-colors"
+                      title="Modificar regla" type="button">
+                      <span class="material-symbols-outlined text-headline-sm">edit</span>
+                    </button>
+                  </div>
+                </div>
+                <!-- Operator Connector Badge -->
+                <div class="flex justify-center -my-2 relative z-10">
+                  <span
+                    class="bg-surface-container-high text-primary font-label-sm text-label-sm px-space-sm py-0.5 rounded-full font-bold shadow-sm">
+                    Y ADEMÁS
+                  </span>
+                </div>
+                <!-- Filter Item 3 -->
+                <div
+                  class="bg-surface p-space-md rounded-lg shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm hover:shadow transition-all group">
+                  <div class="flex items-center gap-space-sm min-w-0">
+                    <div
+                      class="w-8 h-8 rounded bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center shrink-0">
+                      3
+                    </div>
+                    <div class="min-w-0">
+                      <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Productos /
+                        Categorías Compradas</span>
+                      <span class="font-label-lg text-label-lg text-primary font-semibold truncate block">Bebidas frías,
+                        Cervezas, Botanas Yepas</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+                    <span
+                      class="bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm px-space-sm py-0.5 rounded font-medium">3
+                      Categorías</span>
+                    <button
+                      class="text-outline hover:text-error p-1 rounded hover:bg-surface-container-lowest transition-colors"
+                      title="Modificar regla" type="button">
+                      <span class="material-symbols-outlined text-headline-sm">edit</span>
+                    </button>
+                  </div>
+                </div>
+                <!-- Operator Connector Badge -->
+                <div class="flex justify-center -my-2 relative z-10">
+                  <span
+                    class="bg-surface-container-high text-primary font-label-sm text-label-sm px-space-sm py-0.5 rounded-full font-bold shadow-sm">
+                    Y ADEMÁS
+                  </span>
+                </div>
+                <!-- Filter Item 4 -->
+                <div
+                  class="bg-surface p-space-md rounded-lg shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm hover:shadow transition-all group">
+                  <div class="flex items-center gap-space-sm min-w-0">
+                    <div
+                      class="w-8 h-8 rounded bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center shrink-0">
+                      4
+                    </div>
+                    <div>
+                      <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Marcas
+                        Preferidas</span>
+                      <span class="font-label-lg text-label-lg text-primary font-semibold">Cualquiera de las marcas
+                        participantes</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+                    <span
+                      class="bg-surface-container-high text-primary font-label-sm text-label-sm px-space-sm py-0.5 rounded font-medium">Catálogo
+                      Global</span>
+                    <button
+                      class="text-outline hover:text-error p-1 rounded hover:bg-surface-container-lowest transition-colors"
+                      title="Modificar regla" type="button">
+                      <span class="material-symbols-outlined text-headline-sm">edit</span>
+                    </button>
+                  </div>
+                </div>
+                <!-- Operator Connector Badge -->
+                <div class="flex justify-center -my-2 relative z-10">
+                  <span
+                    class="bg-surface-container-high text-primary font-label-sm text-label-sm px-space-sm py-0.5 rounded-full font-bold shadow-sm">
+                    Y ADEMÁS
+                  </span>
+                </div>
+                <!-- Filter Item 5 -->
+                <div
+                  class="bg-surface p-space-md rounded-lg shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm hover:shadow transition-all group">
+                  <div class="flex items-center gap-space-sm min-w-0">
+                    <div
+                      class="w-8 h-8 rounded bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center shrink-0">
+                      5
+                    </div>
+                    <div>
+                      <span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Recencia /
+                        Última Compra</span>
+                      <span class="font-label-lg text-label-lg text-primary font-semibold">Dentro de los últimos 7
+                        días</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+                    <span
+                      class="bg-on-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm px-space-sm py-0.5 rounded font-medium">Ventana
+                      Corta</span>
+                    <button
+                      class="text-outline hover:text-error p-1 rounded hover:bg-surface-container-lowest transition-colors"
+                      title="Modificar regla" type="button">
+                      <span class="material-symbols-outlined text-headline-sm">edit</span>
+                    </button>
+                  </div>
+                </div>
+                <!-- Add Another Condition Trigger -->
+                <div class="pt-space-xs">
+                  <button
+                    class="w-full py-space-sm bg-surface-container-low hover:bg-surface-container-high text-primary font-label-md text-label-md rounded flex items-center justify-center gap-space-xs transition-colors"
+                    type="button">
+                    <span class="material-symbols-outlined text-headline-sm">add</span>
+                    <span class="">Agregar otra condición paramétrica (Ticket, Horario, Tienda)</span>
+                  </button>
+                </div>
+              </div>
+              <!-- Right: Audience Calculation & Strategic Impact Preview -->
+              <div class="xl:col-span-5 flex flex-col gap-space-md">
+                <!-- Audience Estimation Card -->
+                <div class="bg-surface p-space-lg rounded-xl shadow-sm relative overflow-hidden">
+                  <div class="flex items-center justify-between mb-space-sm">
+                    <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Cálculo
+                      Dinámico en Tiempo Real</span>
+                    <span
+                      class="flex items-center gap-1 text-on-tertiary-container font-label-sm text-label-sm font-semibold">
+                      <span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+                      Sincronizado
+                    </span>
+                  </div>
+                  <div class="space-y-space-xs">
+                    <div class="font-body-sm text-body-sm text-on-surface-variant">Audiencia estimada para este
+                      segmento:</div>
+                    <div class="flex items-baseline gap-space-sm">
+                      <span class="font-headline-xl text-headline-xl text-primary font-bold">5,120</span>
+                      <span class="font-headline-sm text-headline-sm text-secondary font-semibold">clientes
+                        activos</span>
+                    </div>
+                    <p class="font-body-md text-body-md text-on-surface font-medium pt-space-xs">
+                      Este segmento abarca aproximadamente el <span class="text-primary font-bold">15.8% del
+                        total</span> de socios en base de datos.
+                    </p>
+                  </div>
+                  <!-- Segment Distribution Bar Visualization -->
+                  <div class="mt-space-md space-y-space-xs">
+                    <div class="flex justify-between font-label-sm text-label-sm text-outline">
+                      <span class="">Representación sobre el universo total</span>
+                      <span class="text-primary font-bold">15.8%</span>
+                    </div>
+                    <div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden flex">
+                      <div class="h-full bg-secondary-container rounded-full" style="width: 15.8%;"></div>
+                    </div>
+                    <div class="flex justify-between font-label-sm text-label-sm text-outline pt-1">
+                      <span class="">0 socios</span>
+                      <span class="">Segmento: 5,120</span>
+                      <span class="">Total: 32,450</span>
+                    </div>
+                  </div>
+                  <!-- Mini Telemetry Matrix -->
+                  <div
+                    class="grid grid-cols-2 gap-space-sm mt-space-md pt-space-md bg-surface-container-low p-space-sm rounded-lg">
+                    <div>
+                      <span class="font-label-sm text-label-sm text-outline uppercase block">Ticket Promedio
+                        Estimado</span>
+                      <span class="font-headline-sm text-headline-sm text-primary font-bold">$108.20 MXN</span>
+                    </div>
+                    <div>
+                      <span class="font-label-sm text-label-sm text-outline uppercase block">Visitas / Semana</span>
+                      <span class="font-headline-sm text-headline-sm text-primary font-bold">3.8 visitas</span>
+                    </div>
+                  </div>
+                  <!-- SVG Mini Sparkline / Trend -->
+                  <div class="mt-space-md space-y-space-xs">
+                    <span class="font-label-sm text-label-sm text-outline uppercase block">Evolución de este grupo
+                      (Últimas 6 semanas)</span>
+                    <div class="w-full h-16 flex items-end">
+                      <svg class="w-full h-14 overflow-visible" preserveAspectRatio="none" viewBox="0 0 300 60">
+                        <path class="text-primary" d="M0,45 Q50,30 100,38 T200,20 T300,10" fill="none"
+                          stroke="currentColor" stroke-width="3"></path>
+                        <path class="text-primary/10" d="M0,45 Q50,30 100,38 T200,20 T300,10 L300,60 L0,60 Z"
+                          fill="currentColor"></path>
+                        <!-- Data points -->
+                        <circle class="fill-primary" cx="0" cy="45" r="3"></circle>
+                        <circle class="fill-primary" cx="100" cy="38" r="3"></circle>
+                        <circle class="fill-primary" cx="200" cy="20" r="3"></circle>
+                        <circle class="fill-secondary-container" cx="300" cy="10" r="4"></circle>
+                      </svg>
+                    </div>
+                    <div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+                      <span class="">Sem 36 (4,210)</span>
+                      <span class="">Hoy (+21.6% crecimiento)</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Marketing Insight Card with Context Image -->
+
+                <!-- Action Buttons Group (Builder Footer) -->
+                <div class="bg-surface p-space-md rounded-xl shadow-sm space-y-space-sm">
+                  <div class="flex flex-col sm:flex-row items-stretch gap-space-sm">
+                    <button
+                      class="flex-1 bg-secondary-container hover:bg-secondary-fixed text-on-primary font-headline-sm text-headline-sm py-space-sm px-space-md rounded font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-space-xs"
+                      id="btn-create-segment" type="button">
+                      <span class="material-symbols-outlined text-headline-sm">check_circle</span>
+                      <span class="">Crear segmento</span>
+                    </button>
+                    <button
+                      class="bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg py-space-sm px-space-md rounded transition-colors flex items-center justify-center gap-space-xs"
+                      type="button">
+                      <span class="material-symbols-outlined text-headline-sm">play_arrow</span>
+                      <span class="">Probar filtro</span>
+                    </button>
+                  </div>
+                  <button
+                    class="w-full bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant hover:text-primary font-label-md text-label-md py-space-xs px-space-md rounded transition-colors text-center"
+                    type="button">
+                    Guardar como borrador para revisión TI
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Interactive Script for Builder Toggles & Toasts -->
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const openBuilderBtn = document.getElementById('btn-open-builder');
+            const builderSection = document.getElementById('segment-builder-section');
+            const createSegmentBtn = document.getElementById('btn-create-segment');
+            const resetFiltersBtn = document.getElementById('btn-reset-filters');
+            const nameInput = document.getElementById('segment-name-input');
+
+            // Scroll to builder smooth
+            if (openBuilderBtn && builderSection) {
+              openBuilderBtn.addEventListener('click', () => {
+                builderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (nameInput) {
+                  nameInput.focus();
+                  nameInput.select();
+                }
+              });
+            }
+
+            // Simulate Segment Creation
+            if (createSegmentBtn) {
+              createSegmentBtn.addEventListener('click', () => {
+                const originalText = createSegmentBtn.innerHTML;
+                createSegmentBtn.disabled = true;
+                createSegmentBtn.innerHTML = `
+            <span class="material-symbols-outlined animate-spin text-headline-sm">sync</span>
+            <span>Generando cluster dinámico...</span>
+          `;
+
+                setTimeout(() => {
+                  createSegmentBtn.innerHTML = `
+              <span class="material-symbols-outlined text-headline-sm text-on-tertiary-container">verified</span>
+              <span>¡Segmento Guardado con Éxito!</span>
+            `;
+                  setTimeout(() => {
+                    createSegmentBtn.innerHTML = originalText;
+                    createSegmentBtn.disabled = false;
+                  }, 3000);
+                }, 1200);
+              });
+            }
+
+            // Reset confirmation
+            if (resetFiltersBtn) {
+              resetFiltersBtn.addEventListener('click', () => {
+                if (confirm('¿Deseas restaurar todas las condiciones al modelo base?')) {
+                  if (nameInput) nameInput.value = 'Nuevo Segmento de Fidelización';
+                }
+              });
+            }
+          });
+        </script>
+      </div>
+    </main>
+  </div>
+
+</body>
+
+</html>
