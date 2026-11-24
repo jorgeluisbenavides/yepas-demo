@@ -1,0 +1,7 @@
+#Node Modules
+api/node_modules/
+
+#Security
+*.env
+
+node_modules/
