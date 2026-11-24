@@ -1,0 +1,71 @@
+{
+  "name": "yepas-cms-demo",
+  "version": "1.0.0",
+  "description": "yepas cms demo",
+  "main": "index.js",
+  "engines": {
+    "node": "24.16.0"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "pretest": "npm run eslint-fix",
+    "prestart": "npm run eslint-fix",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "knex migrate:latest && mocha \"tests/**/*Test.js\" --recursive --exit",
+    "test:coverage": "nyc npm run test",
+    "test:coverage-level": "nyc check-coverage --lines 90",
+    "migrate:latest": "knex migrate:latest",
+    "migrate:rollback": "knex migrate:rollback",
+    "seed:run": "knex seed:run",
+    "eslint-fix": "npx eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgeluisbenavides/yepas-demo.git"
+  },
+  "keywords": [
+    "yepas-cms-demo"
+  ],
+  "author": "Jorge Luis Benavides",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi-date": "^2.0.1",
+    "axios": "^1.7.2",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.11",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.2.10",
+    "luxon": "^3.4.4",
+    "node-cron": "^3.0.2",
+    "nodemailer": "^6.9.14",
+    "opossum": "^8.1.4",
+    "pg": "^8.12.0",
+    "helmet": "^8.1.0",
+    "log4js": "^6.9.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
+    "eslint": "^10.11.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^17.6.0",
+    "mocha": "^10.5.0",
+    "mockery": "^2.1.0",
+    "nock": "^13.5.4",
+    "nodemailer-mock": "^2.0.6",
+    "nodemon": "^3.1.4",
+    "nyc": "^17.0.0",
+    "prettier": "^3.3.2",
+    "sinon": "^22.1.0"
+  }
+}
