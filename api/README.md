@@ -14,11 +14,46 @@ First you need to configure ssh access for bitbucket
 2. git checkout develop (if defaul branch is not develop) Note: default branch for devs DEVELOP
 3. git fetch origin develop && git pull origin develop
 4. verify your node version is v24.16.0 width <<node --version>>
-4. npm i or npm install (install dependencies)
+4. pnpm i or pnpm install (install dependencies)
 5. Note: You need to create a new enviroment file *.env* and set the needed variables APP_ENV=local (IMPORTANT)
 6. npm run test (run tests)
 7. npx eslint . (check eslint constraints)
 8. npm run dev (for working on local)
+
+### 1. Change version node
+```bash
+nvm use
+```
+
+### 4. Install dependencies
+```bash
+pnpm i
+```
+
+### 6. Run tests
+```bash
+npm run test
+```
+
+### 6.1. Run tests coverage
+```bash
+npm run test:coverage
+```
+
+### 6.2. Run tests coverage level
+```bash
+npm run test:coverage-level
+```
+
+### 7. Run check eslint constraints
+```bash
+npx eslint .
+```
+
+### 8. Run server local mode
+```bash
+npm run dev
+```
 
 ---
 

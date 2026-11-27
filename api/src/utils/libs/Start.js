@@ -25,6 +25,7 @@ const startUp = (envs, prefix, routes, mainHandler, middlewares = []) => {
     console.log(`[+] '${APP_NAME}' is Ready`);
     console.log(`[+] Current APP_ENV '${APP_ENV}'`);
     console.log(`[+] Current PORT: '${PORT}'`);
+    console.log(`[+] Current PATH ROUTE: 'localhost:${PORT}${prefix}'`);
 
     console.log('[*] Loaded Middlewares: ' + middlewares.length);
 
